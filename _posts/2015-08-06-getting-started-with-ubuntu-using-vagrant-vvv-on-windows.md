@@ -1,9 +1,12 @@
 ---
+layout: post
 published: true
+title: Getting started with Ubuntu using vagrant VVV on Windows
+date: "2015-08-07 10:30:00"
+categories: 
+  - tutorials
 ---
 
-
-## Getting started with Ubuntu using vagrant VVV on Windows
 
 [Vagrant](https://www.vagrantup.com/) is a tool for building lightweight, reproducible, and portable development environment using configuration and provisioning script such as  [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV). Although it is focused PHP and WordPress development, VVV also automatically provision major packages such as nginx, nodejs, and git. 
 
