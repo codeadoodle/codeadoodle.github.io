@@ -1718,7 +1718,7 @@ body:not(.post-template) .post-title {
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
-@-webkit-keyframes fade-in-down {
+/*@-webkit-keyframes fade-in-down {
     0% {
         opacity: 0;
         -webkit-transform: translateY(-10px);
@@ -1741,10 +1741,10 @@ body:not(.post-template) .post-title {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
-}
+}*/
 
 /* Used to bounce .scroll-down on home page */
-@-webkit-keyframes bounce {
+/*@-webkit-keyframes bounce {
     0%, 10%, 25%, 40%, 50% {
         -webkit-transform: translateY(0) rotate(-90deg);
                 transform: translateY(0) rotate(-90deg);
@@ -1771,7 +1771,7 @@ body:not(.post-template) .post-title {
         -webkit-transform: translateY(-5px) rotate(-90deg);
                 transform: translateY(-5px) rotate(-90deg);
     }
-}
+}*/
 
 
 /* ==========================================================================
