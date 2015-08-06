@@ -13,3 +13,50 @@ google_analytics: 'UA-XXXXXXXX-X'
 # Details for the RSS feed generator
 url:            'http://codeadoodle.github.io'
 author:         'codeadoodle'
+
+# Prose Config
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://codeadoodle.github.io'
+  media: 'assets'
+  metadata:
+    _posts:
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date (YYYY-MM-DD HH:MM:SS)"
+          value: "2014-06-08 10:30:00"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "Tutorials"
+              value: "tutorials"
+            - name: "Articles"
+              value: "articles"
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""
