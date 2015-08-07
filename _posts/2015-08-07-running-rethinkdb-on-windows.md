@@ -24,11 +24,14 @@ You’ll need to add a config file to `/etc/rethinkdb/instances.d/` to automatic
 
 - sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
 - sudo vim /etc/rethinkdb/instances.d/instance1.conf
-- Update RethinkDB binding and optionally, give a server name, then restart the service using:
+
+Update RethinkDB binding with `bind=all` and optionally, give a server name, then restart the service using:
+
 - sudo /etc/init.d/rethinkdb restart
 
 ### Vim Editing Tips
-Some guides on [vim editing](http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/)
+If you're using Vagrant VVV, you may need to use vim to edit since you may not have root access. Some quick reference on [vim editing](http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/)
+
 - Press `i` to enter insert mode
 - Press `esc` to enter command mode
 - Type `:wq` to save and quit vim editing
