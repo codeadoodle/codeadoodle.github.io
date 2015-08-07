@@ -25,7 +25,7 @@ prose:
         field:
           element: "text"
           label: "Date (YYYY-MM-DD HH:MM:SS)"
-          value: "2014-06-08 10:30:00"
+          value: "2015-08-01 00:00:00"
       - name: "layout"
         field:
           element: "hidden"
