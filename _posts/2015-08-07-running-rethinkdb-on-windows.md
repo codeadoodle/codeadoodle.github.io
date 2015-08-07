@@ -1,11 +1,12 @@
 ---
 layout: post
-published: false
+published: true
 title: Running RethinkDB on Windows
 date: "2015-07-08 10:30:00"
 categories: 
   - tutorials
 ---
+
 
 
 [RethinkDB](http://rethinkdb.com/) is an open-source NoSQL JSON database with an innovative push architecture that can be used to continuously send updated query results to applications in realtime instead of polling for changes. It supports relationships using joins, geospatial query,  as well as analytics using aggregation and map/reduce. In short, it could dramatically reduces the time and effort necessary to build scalable realtime apps.
@@ -30,4 +31,3 @@ Some guides on [vim editing](http://www.howtogeek.com/102468/a-beginners-guide-t
 - Press `i` to enter insert mode
 - Press `esc` to enter command mode
 - Type `:wq` to save and quit vim editing
-
