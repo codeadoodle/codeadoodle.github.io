@@ -1,11 +1,12 @@
 ---
 layout: post
-published: false
+published: true
 title: Managing GitHub Pages using Prose.io
 date: "2015-08-08 00:00:00"
 categories: 
   - tutorials
 ---
+
 
 GitHub provides [freely hosted public web pages](https://pages.github.com/) for users, organizations, and repositories. It is powered by Jekyll, a Ruby-based website generator that convert content written in Markdown into a complete static website. However, managing and updating content using Jekyll could be frustrating and inconvenient as you need to deal with command line interface to build and publish content into GitHub.
 
@@ -14,4 +15,4 @@ Enter [Prose.io](http://prose.io/) which provides a simple online content author
 - Authorize Prose.io
 - Add Prose configuration into your site `_config.yml`
 
-Prose.io is open source and built with Backbone.js and therefore you can run it on your own server. It is not limited for blogging as you get access to all your repositories and practically edit any file you want. 
+Prose.io is open source and built with Backbone.js and therefore you can run it on your own server. It is not limited for blogging as you get access to all your repositories and practically edit any file you want.
