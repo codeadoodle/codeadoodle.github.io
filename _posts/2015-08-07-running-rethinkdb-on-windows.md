@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Running RethinkDB on Windows
-date: "2015-07-08 10:30:00"
+date: "2015-08-07 00:00:00"
 categories: 
   - tutorials
 ---
