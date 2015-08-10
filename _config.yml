@@ -14,6 +14,8 @@ google_analytics: 'UA-XXXXXXXX-X'
 url:            'http://codeadoodle.github.io'
 author:         'codeadoodle'
 
+permalink: /posts/:title
+
 # Prose Config
 prose:
   rooturl: '_posts'

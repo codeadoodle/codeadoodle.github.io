@@ -12,7 +12,7 @@ categories:
 [RethinkDB](http://rethinkdb.com/) is an open-source NoSQL JSON database with an innovative push architecture that can be used to continuously send updated query results to applications in realtime instead of polling for changes. It supports relationships using joins, geospatial query,  as well as analytics using aggregation and map/reduce. In short, it could dramatically reduces the time and effort necessary to build scalable realtime apps.
 
 ### Install RethinkDB
-Since RethinkDB requires Linux or OS X, you'll need to [setup and start Ubuntu VM](http://codeadoodle.github.io/tutorials/2015/08/07/getting-started-with-ubuntu-using-vagrant-vvv-on-windows.html) using VirtualBox before following RethinkDB [Installation Script](http://www.rethinkdb.com/docs/install/ubuntu/) on Windows. Use WinSCP, SSH into the VM then run following commands:  
+Since RethinkDB requires Linux or OS X, you'll need to [setup and start Ubuntu VM](/posts/getting-started-with-ubuntu-using-vagrant-vvv-on-windows) using VirtualBox before following RethinkDB [Installation Script](http://www.rethinkdb.com/docs/install/ubuntu/) on Windows. Use WinSCP, SSH into the VM then run following commands:  
 
 - source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
 - wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
