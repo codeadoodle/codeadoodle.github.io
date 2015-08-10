@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://codeadoodle.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-124394-18'
 
 # Details for the RSS feed generator
 url:            'http://codeadoodle.github.io'
