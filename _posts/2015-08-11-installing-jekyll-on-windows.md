@@ -1,11 +1,12 @@
 ---
 layout: post
-published: false
+published: true
 title: Installing Jekyll on Windows
 date: "2015-08-10 00:00:00"
 categories: 
   - tutorials
 ---
+
 
 
 Julian Thilo has written comprehensive guide to get [Jekyll running on Windows](http://jekyll-windows.juthilo.com/). This article highlights some of the errors that you might encounter and how to resolve them. 
