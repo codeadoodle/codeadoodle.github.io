@@ -1556,9 +1556,10 @@ body:not(.post-template) .post-title {
         padding-bottom: 2rem;
         line-height: 1.65em;
     }
+    /* For Project */
     h1.section-header{
         padding-bottom: 0;
-        
+        line-height: 2rem;
     }
 
     .post-date {

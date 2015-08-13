@@ -22,11 +22,11 @@ project: '/projects/'
 
 # Social icons
 show_social_icons: true
-github_username:
+github_username: codeadoodle
 stackoverflow_id:
-twitter_username: 
+twitter_username: codeadoodle
 google_plus_id:
-linkedin_username:
+linkedin_username: codeadoodle
 bitcoin_url:
 paypal_url:
 flattr_button:

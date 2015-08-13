@@ -16,7 +16,8 @@ sitemap:
 
 {% for cat in site.category-list %}
 <section>
- <h1 class="section-header">{{ cat | capitalize }}</h1>
+
+ <h1 class="section-header ">{{ cat | capitalize }}</h1>
 
 {% assign pages = site.pages | sort: 'date' | reverse %}
 {% for page in pages %}

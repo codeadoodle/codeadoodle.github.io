@@ -1,4 +1,4 @@
-<header class="post-header">
+ {% if page.type == 'project'%}<header class="post-header">
             <!-- <a id="blog-logo" href="{{site.baseurl}}">
                 {% if site.logo %}
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
@@ -6,7 +6,5 @@
                     <em class="blog-title">{{ site.name }}</em>
                 {%endif%} 
             </a>  -->
-   
-            {% if page.type == 'project'%} <div><small> &larr; <a href='{{ site.project }}'> My Works</a>  </small></div>{% endif %}
-    
-        </header>
+<div><small> &larr; <a href='{{ site.project }}'> My Works</a>  </small></div>
+</header>{% endif %}
