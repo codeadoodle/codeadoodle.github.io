@@ -1,20 +1,35 @@
-name: codeadoodle
+name: code
 description: Blogging about stuffs
 meta_description: "Blogging about stuffs"
 
 markdown: redcarpet
 highlighter: pygments
 logo: false
-paginate: 15
+paginate: 2
 baseurl: /
 domain_name: 'http://codeadoodle.github.io'
 google_analytics: 'UA-124394-18'
 
+
 # Details for the RSS feed generator
 url:            'http://codeadoodle.github.io'
 author:         'codeadoodle'
-
 permalink: /posts/:title
+
+# More Config
+# redcarpet:
+#   extensions: ['smart', 'tables', 'with_toc_data']
+sass:
+  compressed: true
+# https://github.com/jekyll/jekyll/issues/920
+include: ['_pages']
+# http://stackoverflow.com/questions/17118551/generating-a-list-of-pages-not-posts-in-a-given-category
+category-list: [featured, projects]
+# gems:
+# - jekyll-mentions
+# - jemoji
+# - jekyll-redirect-from
+
 
 # Prose Config
 prose:
