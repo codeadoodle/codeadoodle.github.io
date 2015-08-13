@@ -11,8 +11,7 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 	"syntax",
-    "basscss",
-    "solarized-dark"
+  "basscss"
 ;
 
 figcaption {
@@ -74,3 +73,7 @@ figcaption {
 form {  font-weight: 300; font-size: 1.6rem;  }
 
 textarea.input { height: 8em; }
+
+.page-title a{
+  color:#333;
+}

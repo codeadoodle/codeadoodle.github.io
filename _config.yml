@@ -16,6 +16,21 @@ url:            'http://codeadoodle.github.io'
 author:         'codeadoodle'
 permalink: /posts/:title
 
+# Custom Header Links
+about: '/about/'
+project: '/projects/'
+
+# Social icons
+show_social_icons: true
+github_username:
+stackoverflow_id:
+twitter_username: 
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
 # More Config
 # redcarpet:
 #   extensions: ['smart', 'tables', 'with_toc_data']

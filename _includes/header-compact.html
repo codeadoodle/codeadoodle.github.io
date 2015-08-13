@@ -1,14 +1,12 @@
 <header class="post-header">
-            <a id="blog-logo" href="{{site.baseurl}}">
+            <!-- <a id="blog-logo" href="{{site.baseurl}}">
                 {% if site.logo %}
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
                 {% else %}
-                    <h1 class="blog-title">{{ site.name }}</h1>
-                     {% if site.description %} <div class="page-description">
-                     {{ site.description }}. 
-                     {% if page.project%} <a href='{{ page.project }}'> My Works </a> {% endif %}
-                     {% if page.about %} and  <a href='{{ page.about }}'> About me </a> {% endif %}
-                   </div>{% endif %}
+                    <em class="blog-title">{{ site.name }}</em>
                 {%endif%} 
-            </a>
+            </a>  -->
+   
+            {% if page.type == 'project'%} <div><small> &larr; <a href='{{ site.project }}'> My Works</a>  </small></div>{% endif %}
+    
         </header>

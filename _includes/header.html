@@ -14,8 +14,8 @@
                 </a></h1>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }}. {% endif %}
-                 {% if page.project%} <a href='{{ page.project }}'> My Works <!-- {{ site.baseurl }} --></a> and {% endif %}
-                {% if page.about %} <a href='{{ page.about }}'> About me </a> {% endif %}
+                {% if site.project%} <a href='{{ site.project }}'> My Works <!-- {{ site.baseurl }} --></a> and {% endif %}
+                {% if site.about %} <a href='{{ site.about }}'> About me </a> {% endif %}
             </h2>
         </div>
     </div>

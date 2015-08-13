@@ -860,7 +860,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-template .post-title {
-    margin-bottom: 0;
+    margin-bottom: 1.2rem;
 }
 
 .post-template .post-meta {
@@ -1555,6 +1555,10 @@ body:not(.post-template) .post-title {
         margin-right: 16px;
         padding-bottom: 2rem;
         line-height: 1.65em;
+    }
+    h1.section-header{
+        padding-bottom: 0;
+        
     }
 
     .post-date {
