@@ -2,16 +2,18 @@
 layout: default
 post_class: post-template page-template
 ---
+<header class="main-header  post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
 
 <nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
+    <a class="back-button icon-arrow-left-back" href="{{ site.baseurl }}"><i class="fa fa-home"></i> {{ site.name }}</a>
     <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
 </nav>
-
+</header>
 
 <main class="content" role="main">
     <article class="post">
-        <!-- <header class="post-header">
+     {% include header-compact.html %}
+       <!--  <header class="post-header">
             <a id="blog-logo" href="{{site.baseurl}}">
                 {% if site.logo %}
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
@@ -21,12 +23,28 @@ post_class: post-template page-template
             </a>
         </header> -->
 
-        <h1 class="post-title">{{ page.title }}</h1>
+        <header class="post-header">
+             <h1 class="post-title">{{ page.title }}</h1>
+        </header>
+
+       
 
         <section class="post-content">
             {{content}}
         </section>
+  <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            {% include author.html %}
 
+            <!-- Share links section -->
+            {% include share.html %}
+            
+            <!-- Disqus comments -->
+            {% if page.disqus %}
+                {% include disqus.html %}
+            {% endif %}
+            
+        </footer>
     </article>
 
 </main>
