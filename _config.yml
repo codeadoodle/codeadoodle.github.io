@@ -1,6 +1,7 @@
 name: code
 description: Blogging about stuffs
 meta_description: "Blogging about stuffs"
+port: 4003
 
 markdown: redcarpet
 highlighter: pygments
