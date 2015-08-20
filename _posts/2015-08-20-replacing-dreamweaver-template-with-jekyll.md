@@ -7,7 +7,7 @@ published: true
 title: Replacing Dreamweaver Template with Jekyll
 ---
 
-One of Dreamweaver's [greatest timesaving features](http://www.onlamp.com/pub/a/web-development/excerpts/0636920001393/templates-ch19.html) is "Templates" which is useful to quickly build similar-looking pages, and update every page in your site with the click of a button. You can achieve similar functionality using [Jekyll static page](http://jekyllrb.com/docs/pages/) feature and take advantage of much more powerful [Shopify Liquid](https://docs.shopify.com/themes/liquid-documentation/basics), an open-source Ruby-based template language, to load dynamic content.
+One of Dreamweaver's [indispensable timesaving feature](http://www.onlamp.com/pub/a/web-development/excerpts/0636920001393/templates-ch19.html) is "Templates" to help you quickly build similar-looking pages and update every page in your site with the click of a button. Despite powerful text editor feature like Sublime Text, it is still not as practical as Dreamweaver Site Template feature to manage multiple pages. Now, I can achieve similar functionality using [Jekyll static page](http://jekyllrb.com/docs/pages/) and take advantage of much more powerful [Shopify Liquid](https://docs.shopify.com/themes/liquid-documentation/basics), an open-source Ruby-based template language, to load dynamic content.
 
 To  start, update jekyll `_config.yml` with
 
@@ -61,7 +61,7 @@ To accommodate common UI components across some of the pages, you can create sub
 ---
 layout: main
 ---
-<div id="container"> {% include navbar.html %}
+<div id="container"> 
     <div class="row">
       <div class="page-header clearfix">
         <h1 class="pull-left">{{ page.title }}</h1> </div> {{content}} </div>
@@ -80,7 +80,8 @@ layout: main
 
 ```
 
-You can also include another _html_ files as part of the template if they are placed in jekyll's `_includes` folder, e.g.  _navbar.html_. This is useful to make your template code more readable and manageable.
+You can also include another _html_ files as part of the template if they are placed in jekyll's `includes` folder, e.g.  _navbar.html_. This is useful to make your template code more readable and manageable using following `{\% include navbar.html \%}`: 
+      
 
 ```html
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
