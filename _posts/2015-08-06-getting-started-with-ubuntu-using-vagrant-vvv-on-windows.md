@@ -14,9 +14,12 @@ Vagrant is a tool for building lightweight, reproducible, and portable developme
 There're few things to take note if you're keen to use VVV on Windows 8.1:
 
 1. VVV requires VirtualBox, thus you need to turn Hyper-V support off. Instead doing this manually, you can create new boot menu with a "No Hyper-V" entry using following tips by [Scott Hanselman](https://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx)
-        
-         - C:\>bcdedit /copy {current} /d "No Hyper-V"
-    	 - C:\>bcdedit /set {ff-23-113-824e-5c5144ea} hypervisorlaunchtype off 
+
+{% highlight console %}
+- C:\>bcdedit /copy {current} /d "No Hyper-V"
+- C:\>bcdedit /set {ff-23-113-824e-5c5144ea} hypervisorlaunchtype off 
+{% endhighlight %}
+
 2. Hold down shift on the keyboard while clicking Windows `Restart` button
 3. Follow VVV step-by-step installation guide
 4. Update Windows host file with 
@@ -29,7 +32,9 @@ There're few things to take note if you're keen to use VVV on Windows 8.1:
 7. Visit http://vvv.dev/ for accessing VVV default dashboard
 8. You may also need to use [xip.io](http://xip.io/) to access virtual hosts from devices on your local network, like iPads, iPhones.
 
+<hr/>
 ### Related Resources:
+
 - [Vagrant shell provisioning](http://www.sitepoint.com/vagrantfile-explained-setting-provisioning-shell/)
 - Articles [1](http://webdevstudios.com/2015/01/14/getting-started-vagrant-vvv-local-development/),[2](https://zach-adams.com/2014/09/ultimate-wordpress-development-workflow/),[3](https://wpbeaches.com/setting-up-a-wordpress-vvv-vagrant-workflow/) on using VVV Vagrant for WordPress local development workflow with [VV](https://github.com/bradp/vv) Variable and [VVV Dashboard](https://github.com/topdown/VVV-Dashboard)
 - [StackOverflow](http://stackoverflow.com/questions/138162/wildcards-in-a-windows-hosts-file ) on Setting up DNS and [Wildcard Hostname](http://www.lavinski.me/wildcard-hostnames/) on Windows
