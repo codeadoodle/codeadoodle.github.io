@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Installing Jekyll on Windows &#8211; Code: Coding and Stuffs</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="codeadoodle">
+    <meta name="keywords" content="tutorials">
+    <link rel="canonical" href="http://codeadoodle.github.io/2015/installing-jekyll-on-windows/">
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Installing Jekyll on Windows">
+    <meta property="og:description" content="Coding and Stuffs">
+    <meta property="og:url" content="http://codeadoodle.github.io/2015/installing-jekyll-on-windows/">
+    <meta property="og:site_name" content="Code">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+</head>
+
+<body class="home-template">
+  <main class="u-container">
+    <div class="c-page">
+    <header class="c-page__header">
+    
+    <h1>Coding and Stuffs</h1>
+    <p>
+        <a href="/">Articles</a><span class="u-separate"></span> <a href="/about/">About</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    
+
+<article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Installing Jekyll on Windows</h1>
+        <p class="c-article__time">
+            <time datetime="2015-08-10T00:00:00+08:00" itemprop="datePublished">Aug 10, 2015</time>
+        </p>
+        <span class="small">1 minute read</span> 
+    </header>
+    <div class="c-article__main">
+        <p>Julian Thilo has written comprehensive guide to get <a href="http://jekyll-windows.juthilo.com/">Jekyll running on Windows</a>. This article highlights some of the errors that you might encounter and how to resolve them.</p>
+
+<p>First, check your Ruby installation using <code>ruby -v</code>. The recommended working version is <a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.0.0-p576-x64.exe"><em>2.0.0p576</em></a> (not the latest). It also works for <em>ruby 2.0.0p645 (2015-04-13) [x64-mingw32]</em>.</p>
+
+<p>You will also need to install the <a href="http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe">Ruby Development Kit</a>, which is also available on the Ruby Installer downloads page. Without DevKit, you’ll likely encounter following error:</p>
+
+<pre><code>ERROR:  Error installing jekyll:
+The 'yajl-ruby' native gem requires installed build tools.
+</code></pre>
+
+<p>Double-click the self-extracting executable (SFX) downloaded and choose a directory (without spaces) to install the DevKit artifacts into<br />
+e.g. <code>C:\RubyDevKit</code>. Then, enable Rubies to use DevKit by running following commands:</p>
+
+<pre><code>cd C:\RubyDevKit
+ruby dk.rb init
+ruby dk.rb install
+</code></pre>
+
+<p>If you encounter</p>
+
+<pre><code>Invalid configuration or no Rubies listed. Please fix 'config.yml' and rerun 'ruby dk.rb install'
+</code></pre>
+
+<p>when running <code>ruby dk.rb install</code> - check the <code>config.yml</code> and add path to your ruby installation manually, i.e. <code>- C:/ruby200</code> (include the dash), then re-run the command as following:</p>
+
+<pre><code>c:\RubyDevKit&gt;ruby dk.rb install
+[INFO] Installing 'C:/ruby200/lib/ruby/site_ruby/2.0.0/rubygems/defaults/operating_system.rb'
+[INFO] Installing 'C:/ruby200/lib/ruby/site_ruby/devkit.rb'
+</code></pre>
+
+<p>Refer to  <a href="http://github.com/oneclick/rubyinstaller/wiki/Development-Kit">http://github.com/oneclick/rubyinstaller/wiki/Development-Kit</a> for more details .</p>
+
+<p>Finally, install Jekyll by running <code>gem install jekyll</code>. In the event you encounter following SSL error when trying to pull updates from RubyGems:</p>
+
+<pre><code>ERROR:  Could not find a valid gem 'jekyll' (&gt;= 0), here is why:
+Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre>
+
+<p>You could use workaround highlighted in <a href="https://gist.github.com/luislavena/f064211759ee0f806c88">https://gist.github.com/luislavena/f064211759ee0f806c88</a> to update your ruby gems (e.g. into version 2.0.15 for 2.0 branch):</p>
+
+<pre><code>D:\&gt;gem install --local D:\rubygems-update-2.0.15.gem
+update_rubygems --no-ri --no-rdoc
+gem uninstall rubygems-update -x
+gem install jekyll
+</code></pre>
+
+<p>That’s all! You should be able to clone your Jekyll theme and run <code>jekyll serve</code> to build and run your site locally.</p>
+
+    </div> 
+    <footer class="c-article__footer">
+        <p>
+            
+        </p>
+         
+    </footer>
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <section class="copyright">
+        <p><small><a href="">Code</a> by codeadoodle &copy; 2016  &bull; All rights reserved<span class="u-separate"></span><a href="/rss.xml">RSS</a></small></p>
+    </section>
+</footer>
+
+</div>
+
+  </main>
+      <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-124394-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+
+</body>
+</html>

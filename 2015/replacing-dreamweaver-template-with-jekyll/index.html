@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Replacing Dreamweaver Template with Jekyll &#8211; Code: Coding and Stuffs</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="codeadoodle">
+    <meta name="keywords" content="tutorials">
+    <link rel="canonical" href="http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/">
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Replacing Dreamweaver Template with Jekyll">
+    <meta property="og:description" content="Coding and Stuffs">
+    <meta property="og:url" content="http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/">
+    <meta property="og:site_name" content="Code">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+</head>
+
+<body class="home-template">
+  <main class="u-container">
+    <div class="c-page">
+    <header class="c-page__header">
+    
+    <h1>Coding and Stuffs</h1>
+    <p>
+        <a href="/">Articles</a><span class="u-separate"></span> <a href="/about/">About</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    
+
+<article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Replacing Dreamweaver Template with Jekyll</h1>
+        <p class="c-article__time">
+            <time datetime="2015-08-20T00:00:00+08:00" itemprop="datePublished">Aug 20, 2015</time>
+        </p>
+        <span class="small">5 minute read</span> 
+    </header>
+    <div class="c-article__main">
+        <p>One of Dreamweaver’s <a href="http://www.onlamp.com/pub/a/web-development/excerpts/0636920001393/templates-ch19.html">indispensable timesaving feature</a> is “Templates” to help you quickly build similar-looking pages and update every page in your site with the click of a button. Despite powerful text editor feature like Sublime Text, it is still not as practical as Dreamweaver Site Template feature to manage multiple pages. Now, I can achieve similar functionality using <a href="http://jekyllrb.com/docs/pages/">Jekyll static page</a> and take advantage of much more powerful <a href="https://docs.shopify.com/themes/liquid-documentation/basics">Shopify Liquid</a>, an open-source Ruby-based template language, to load dynamic content.</p>
+
+<p>To  start, update jekyll <code>_config.yml</code> with</p>
+
+<pre><code>include:
+  - "_pages"
+</code></pre>
+
+<p>Create your global main page template, called <em>main.html</em> at <code>_layouts</code> and include `` tag to indicate editable region:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno"> 1</span> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="lineno"> 2</span> <span class="nt">&lt;html&gt;</span>
+<span class="lineno"> 3</span> <span class="nt">&lt;head&gt;</span>
+<span class="lineno"> 4</span>   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 5</span>   <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno"> 6</span>   <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge,chrome=1&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno"> 7</span>   <span class="nt">&lt;title&gt;</span>Replacing Dreamweaver Template with Jekyll <span class="ni">&amp;#8211;</span>  <span class="ni">&amp;#8211;</span> Coding and Stuffs<span class="nt">&lt;/title&gt;</span>
+<span class="lineno"> 8</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno"> 9</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">content=</span><span class="s">&quot;codeadoodle&quot;</span><span class="nt">&gt;</span> 
+<span class="lineno">10</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content=</span><span class="s">&quot;tutorials&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">11</span>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href=</span><span class="s">&quot;http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">12</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;HandheldFriendly&quot;</span> <span class="na">content=</span><span class="s">&quot;True&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno">13</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;MobileOptimized&quot;</span> <span class="na">content=</span><span class="s">&quot;320&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno">14</span>   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno">15</span>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">16</span>   <span class="c">&lt;!-- Optional theme --&gt;</span>
+<span class="lineno">17</span>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">18</span>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">19</span>   <span class="c">&lt;!-- Customisation  --&gt;</span>
+<span class="lineno">20</span>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;/assets/css/site.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="lineno">21</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:locale&quot;</span> <span class="na">content=</span><span class="s">&quot;en_US&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">22</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;article&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">23</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Replacing Dreamweaver Template with Jekyll&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">24</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Coding and Stuffs&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">25</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span><span class="s">&quot;http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">26</span>   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span> <span class="na">content=</span><span class="s">&quot;Code&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/head&gt;</span>
+<span class="lineno">27</span> 
+<span class="lineno">28</span> <span class="nt">&lt;body&gt;</span> 
+<span class="lineno">29</span>   <span class="c">&lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&gt;</span>
+<span class="lineno">30</span>   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="lineno">31</span>   <span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
+<span class="lineno">32</span>   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="lineno">33</span> <span class="nt">&lt;/body&gt;</span>
+<span class="lineno">34</span> <span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>To accommodate common UI components across some of the pages, you can create sub-template called <em>bootstrap.html</em> with <code>layout</code> key value referring to parent template’s file name (e.g. <em>main</em>).</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno"> 1</span> ---
+<span class="lineno"> 2</span> layout: main
+<span class="lineno"> 3</span> ---
+<span class="lineno"> 4</span> <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span> 
+<span class="lineno"> 5</span>     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 6</span>       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-header clearfix&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 7</span>         <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;pull-left&quot;</span><span class="nt">&gt;</span>Replacing Dreamweaver Template with Jekyll<span class="nt">&lt;/h1&gt;</span> <span class="nt">&lt;/div&gt;</span>  <span class="nt">&lt;/div&gt;</span>
+<span class="lineno"> 8</span>     <span class="c">&lt;!-- /.row--&gt;</span>
+<span class="lineno"> 9</span>     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">10</span>       <span class="nt">&lt;footer&gt;</span>
+<span class="lineno">11</span>         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+<span class="lineno">12</span>           <span class="nt">&lt;hr/&gt;</span> <span class="nt">&lt;small&gt;</span>
+<span class="lineno">13</span>             <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/a&gt;</span> <span class="ni">&amp;copy;</span>  <span class="ni">&amp;bull;</span> All rights reserved.<span class="nt">&lt;/p&gt;</span>
+<span class="lineno">14</span>             <span class="nt">&lt;/small&gt;</span> <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">15</span>       <span class="nt">&lt;/footer&gt;</span>
+<span class="lineno">16</span>     <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">17</span>     <span class="c">&lt;!-- /.row --&gt;</span>
+<span class="lineno">18</span> <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">19</span> <span class="c">&lt;!-- /#container --&gt;</span></code></pre></figure>
+
+<p>You can also include another <em>html</em> files as part of the template if they are placed in jekyll’s <code>includes</code> folder, e.g.  <em>navbar.html</em>. This is useful to make your template code more readable and manageable using following <code>{\% include navbar.html \%}</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno"> 1</span> <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default navbar-fixed-top&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 2</span>   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar-header&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+<span class="lineno"> 3</span>     <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-target=</span><span class="s">&quot;.sidebar-collapse&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle navigation<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-bars&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span>
+<span class="lineno"> 4</span>     <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">id=</span><span class="s">&quot;nav-toggle&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-target=</span><span class="s">&quot;#main-nav&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle navigation<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-ellipsis-h&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;/button&gt;</span>
+<span class="lineno"> 5</span>   <span class="nt">&lt;/div&gt;</span>
+<span class="lineno"> 6</span>   <span class="c">&lt;!-- /.navbar-header --&gt;</span>
+<span class="lineno"> 7</span>   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;main-nav&quot;</span> <span class="na">class=</span><span class="s">&quot;collapse navbar-collapse&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 8</span>     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 9</span>       <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Page 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="lineno">10</span>       <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Page 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="lineno">11</span>       <span class="c">&lt;!-- /.dropdown --&gt;</span>
+<span class="lineno">12</span>     <span class="nt">&lt;/ul&gt;</span>
+<span class="lineno">13</span>   <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">14</span>   <span class="c">&lt;!--/#main-nav .navbar-collapse--&gt;</span>
+<span class="lineno">15</span> <span class="nt">&lt;/nav&gt;</span>
+<span class="lineno">16</span> <span class="c">&lt;!-- /.navbar-fixed-top --&gt;</span></code></pre></figure>
+
+<p>Create your actual page called <em>hello.html</em> in jekyll’s <code>_pages</code> folder which refer to specific page template to apply.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno"> 1</span> ---
+<span class="lineno"> 2</span> layout: bootstrap
+<span class="lineno"> 3</span> title: &quot;Hello World&quot;
+<span class="lineno"> 4</span> permalink: /hello-world/
+<span class="lineno"> 5</span> ---
+<span class="lineno"> 6</span> <span class="nt">&lt;main</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 7</span>   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel panel-default&quot;</span><span class="nt">&gt;</span>
+<span class="lineno"> 8</span>     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-heading&quot;</span><span class="nt">&gt;</span>Panel Title<span class="nt">&lt;/div&gt;</span>
+<span class="lineno"> 9</span>     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-body&quot;</span><span class="nt">&gt;</span> Some content <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">10</span>   <span class="nt">&lt;/div&gt;</span>
+<span class="lineno">11</span> <span class="nt">&lt;/main&gt;</span></code></pre></figure>
+
+<p>The page is available @ <em>http://localhost:4000/hello-world/</em> after Jekyll build. Note that you can set relevant page and site level parameters for the templates to render, thus making your template more flexible and reusable.</p>
+
+    </div> 
+    <footer class="c-article__footer">
+        <p>
+            
+        </p>
+         
+    </footer>
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <section class="copyright">
+        <p><small><a href="">Code</a> by codeadoodle &copy; 2016  &bull; All rights reserved<span class="u-separate"></span><a href="/rss.xml">RSS</a></small></p>
+    </section>
+</footer>
+
+</div>
+
+  </main>
+      <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-124394-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+
+</body>
+</html>

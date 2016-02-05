@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Code: Coding and Stuffs</title>
+    <title>Running RethinkDB on Windows &#8211; Code: Coding and Stuffs</title>
     <meta name="description" content=""/>
     <meta name="author" content="codeadoodle">
-    
-    <link rel="canonical" href="http://codeadoodle.github.io/">
+    <meta name="keywords" content="tutorials">
+    <link rel="canonical" href="http://codeadoodle.github.io/2015/running-rethinkdb-on-windows/">
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
@@ -23,9 +23,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Home">
+    <meta property="og:title" content="Running RethinkDB on Windows">
     <meta property="og:description" content="Coding and Stuffs">
-    <meta property="og:url" content="http://codeadoodle.github.io/">
+    <meta property="og:url" content="http://codeadoodle.github.io/2015/running-rethinkdb-on-windows/">
     <meta property="og:site_name" content="Code">
 
     <!-- Icons -->
@@ -45,7 +45,7 @@
     <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
 </head>
 
-<body class="post-template page-template">
+<body class="home-template">
   <main class="u-container">
     <div class="c-page">
     <header class="c-page__header">
@@ -57,84 +57,53 @@
 </header>
 
     <div class="c-page__main">
-    <section class="c-archives">
-
-    
     
 
-    
-        <h2 class="c-archives__year" id="2015-ref">2015</h2>
-        <ul class="c-archives__list">
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/rethinkdb-and-strongloop/">Building StrongLoop app powered by RethinkDB</a></h3>
-            <p>Sep 19, 2015</p>
-        </li>
-    
-        
-    
+<article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Running RethinkDB on Windows</h1>
+        <p class="c-article__time">
+            <time datetime="2015-08-07T00:00:00+08:00" itemprop="datePublished">Aug 7, 2015</time>
+        </p>
+        <span class="small">1 minute read</span> 
+    </header>
+    <div class="c-article__main">
+        <p><a href="http://rethinkdb.com/">RethinkDB</a> is an open-source NoSQL JSON database with an innovative push architecture that can be used to continuously send updated query results to applications in realtime instead of polling for changes. It supports relationships using joins, geospatial query,  as well as analytics using aggregation and map/reduce. In short, it could dramatically reduces the time and effort necessary to build scalable realtime apps.</p>
 
-    
-    
+<h3 id="install-rethinkdb">Install RethinkDB</h3>
+<p>Since RethinkDB requires Linux or OS X, you’ll need to <a href="/posts/getting-started-with-ubuntu-using-vagrant-vvv-on-windows">setup and start Ubuntu VM</a> using VirtualBox before following RethinkDB <a href="http://www.rethinkdb.com/docs/install/ubuntu/">Installation Script</a> on Windows. Use WinSCP, SSH into the VM then run following commands:</p>
 
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/replacing-dreamweaver-template-with-jekyll/">Replacing Dreamweaver Template with Jekyll</a></h3>
-            <p>Aug 20, 2015</p>
-        </li>
-    
-        
-    
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">- <span class="nb">source</span> /etc/lsb-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/rethinkdb.list
+- wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg <span class="p">|</span> sudo apt-key add -
+- sudo apt-get update
+- sudo apt-get install rethinkdb</code></pre></figure>
 
-    
-    
+<h3 id="start-rethinkdb-at-system-startup">Start RethinkDB at system startup</h3>
+<p>You’ll need to add a config file to <code>/etc/rethinkdb/instances.d/</code> to automatically run RethinkDB on system startup.</p>
 
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/installing-jekyll-on-windows/">Installing Jekyll on Windows</a></h3>
-            <p>Aug 10, 2015</p>
-        </li>
-    
-        
-    
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">- sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
+- sudo vim /etc/rethinkdb/instances.d/instance1.conf</code></pre></figure>
 
-    
-    
+<p>Update RethinkDB binding with <code>bind=all</code> and optionally, give a server name, then restart the service using:</p>
 
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/managing-github-pages-using-prose-io/">Managing GitHub Pages using Prose.io</a></h3>
-            <p>Aug 8, 2015</p>
-        </li>
-    
-        
-    
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">- sudo /etc/init.d/rethinkdb restart</code></pre></figure>
 
-    
-    
+<h3 id="vim-editing-tips">Vim Editing Tips</h3>
+<p>If you’re using Vagrant VVV, you may need to use vim to edit since you may not have root access. Some quick reference on <a href="http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/">vim editing</a></p>
 
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/running-rethinkdb-on-windows/">Running RethinkDB on Windows</a></h3>
-            <p>Aug 7, 2015</p>
-        </li>
-    
-        
-    
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">- Press <span class="sb">`</span>i<span class="sb">`</span> to enter insert mode
+- Press <span class="sb">`</span>esc<span class="sb">`</span> to enter <span class="nb">command </span>mode
+- Type <span class="sb">`</span>:wq<span class="sb">`</span> to save and quit vim editing</code></pre></figure>
 
-    
-    
 
-    
-        <li class="c-archives__item">
-            <h3><a href="/2015/getting-started-with-ubuntu-using-vagrant-vvv-on-windows/">Getting started with Ubuntu using Vagrant on Windows</a></h3>
-            <p>Aug 6, 2015</p>
-        </li>
-    
-        </ul>
-    
-
-</section>
+    </div> 
+    <footer class="c-article__footer">
+        <p>
+            
+        </p>
+         
+    </footer>
+</article>
 
     </div>
     <footer class="c-page__footer">

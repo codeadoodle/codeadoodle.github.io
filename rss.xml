@@ -1,21 +1,693 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Code</title>
+    <description>Coding and Stuffs</description>
+    <link>http://codeadoodle.github.io/</link>
+    <atom:link href="http://codeadoodle.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        <title>Building StrongLoop app powered by RethinkDB</title>
+        <description>&lt;p&gt;This is my version from &lt;a href=&quot;https://strongloop.com/strongblog/rethinkdb-connector-loopback-node-js-framework/&quot;&gt;Getting Started with the RethinkDB Connector for the LoopBack Node.js Framework&lt;/a&gt; . Assuming you’ve &lt;a href=&quot;https://strongloop.com/get-started/&quot;&gt;installed StrongLoop&lt;/a&gt;, you can now create app using following commands&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ slc loopback
+
+     _-----_
+    |       |    .--------------------------.
+    |--(o)--|    |  Let&#39;s create a LoopBack |
+   `---------´   |       application!       |
+    ( _´U`_ )    &#39;--------------------------&#39;
+    /___A___\
+     |  ~  |
+   __&#39;.___.&#39;__
+ ´   `  |° ´ Y `
+
+? What&#39;s the name of your application? demo-sl-rdb
+? Enter name of the directory to contain the project: demo-sl-rdb
+   create demo-sl-rdb/
+     info change the working directory to demo-sl-rdb
+
+Generating .yo-rc.json
+
+I&#39;m all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+
+   create .editorconfig
+   create .jshintignore
+   create .jshintrc
+   create README.md
+   create server\boot\authentication.js
+   create server\boot\explorer.js
+   create server\boot\rest-api.js
+   create server\boot\root.js
+   create server\middleware.json
+   create server\server.js
+   create .gitignore
+   create client\README.md
+npm WARN deprecated jsonstream@1.0.3: use JSONStream instead
+npm WARN prefer global ycssmin@1.0.1 should be installed with -g
+npm WARN prefer global ycssmin@1.0.1 should be installed with -g
+demo-sl-rdb@1.0.0 F:\DEV\strongloop\demo\demo-sl-rdb
+├─┬ compression@1.5.2
+│ ├─┬ accepts@1.2.13
+│ │ ├── mime-types@2.1.6
+│ │ └── negotiator@0.5.3
+│ ├── bytes@2.1.0
+│ ├─┬ compressible@2.0.5
+│ │ └── mime-db@1.18.0
+│ ├── debug@2.2.0
+│ ├── on-headers@1.0.0
+│ └── vary@1.0.1
+├── cors@2.7.1
+├─┬ errorhandler@1.4.2
+│ └── escape-html@1.0.2
+├─┬ jshint@2.8.0
+│ ├─┬ cli@0.6.6
+│ │ └─┬ glob@3.2.11
+│ │   ├── inherits@2.0.1
+│ │   └─┬ minimatch@0.3.0
+│ │     ├── lru-cache@2.7.0
+│ │     └── sigmund@1.0.1
+│ ├─┬ console-browserify@1.1.0
+│ │ └── date-now@0.1.4
+│ ├── exit@0.1.2
+│ ├─┬ htmlparser2@3.8.3
+│ │ ├── domelementtype@1.3.0
+│ │ ├── domhandler@2.3.0
+│ │ ├─┬ domutils@1.5.1
+│ │ │ └─┬ dom-serializer@0.1.0
+│ │ │   ├── domelementtype@1.1.3
+│ │ │   └── entities@1.1.1
+│ │ ├── entities@1.0.0
+│ │ └─┬ readable-stream@1.1.13
+│ │   ├── core-util-is@1.0.1
+│ │   ├── isarray@0.0.1
+│ │   └── string_decoder@0.10.31
+│ ├── lodash@3.7.0
+│ ├─┬ minimatch@2.0.10
+│ │ └─┬ brace-expansion@1.1.0
+│ │   ├── balanced-match@0.2.0
+│ │   └── concat-map@0.0.1
+│ ├── shelljs@0.3.0
+│ └── strip-json-comments@1.0.4
+├─┬ loopback@2.22.1
+│ ├── async@0.9.2
+│ ├── bcryptjs@2.2.2
+│ ├─┬ body-parser@1.14.0
+│ │ ├── content-type@1.0.1
+│ │ ├─┬ http-errors@1.3.1
+│ │ │ └── statuses@1.2.1
+│ │ ├── iconv-lite@0.4.11
+│ │ ├─┬ on-finished@2.3.0
+│ │ │ └── ee-first@1.1.1
+│ │ ├── qs@5.1.0
+│ │ ├─┬ raw-body@2.1.3
+│ │ │ └── unpipe@1.0.0
+│ │ └─┬ type-is@1.6.8
+│ │   └── media-typer@0.3.0
+│ ├── canonical-json@0.0.4
+│ ├─┬ continuation-local-storage@3.1.4
+│ │ ├─┬ async-listener@0.5.6
+│ │ │ └── shimmer@1.0.0
+│ │ └── emitter-listener@1.0.1
+│ ├── depd@1.1.0
+│ ├── ejs@2.3.4
+│ ├─┬ express@4.13.3
+│ │ ├── array-flatten@1.1.1
+│ │ ├── content-disposition@0.5.0
+│ │ ├── cookie@0.1.3
+│ │ ├── cookie-signature@1.0.6
+│ │ ├── depd@1.0.1
+│ │ ├── finalhandler@0.4.0
+│ │ ├── merge-descriptors@1.0.0
+│ │ ├── methods@1.1.1
+│ │ ├── path-to-regexp@0.1.7
+│ │ ├─┬ proxy-addr@1.0.8
+│ │ │ ├── forwarded@0.1.0
+│ │ │ └── ipaddr.js@1.0.1
+│ │ ├── qs@4.0.0
+│ │ ├── range-parser@1.0.2
+│ │ ├─┬ send@0.13.0
+│ │ │ ├── depd@1.0.1
+│ │ │ ├── destroy@1.0.3
+│ │ │ └── mime@1.3.4
+│ │ ├── serve-static@1.10.0
+│ │ └── utils-merge@1.0.0
+│ ├── inflection@1.7.1
+│ ├─┬ loopback-connector-remote@1.0.3
+│ │ └── sl-blip@1.0.0
+│ ├── loopback-phase@1.2.0
+│ ├─┬ nodemailer@1.4.0
+│ │ ├─┬ buildmail@1.2.4
+│ │ │ ├── addressparser@0.3.2
+│ │ │ ├── libbase64@0.1.0
+│ │ │ └── libqp@1.0.0
+│ │ ├─┬ hyperquest@1.2.0
+│ │ │ ├─┬ duplexer2@0.0.2
+│ │ │ │ └── readable-stream@1.1.13
+│ │ │ └─┬ through2@0.6.5
+│ │ │   ├── readable-stream@1.0.33
+│ │ │   └── xtend@4.0.0
+│ │ ├── libmime@1.0.0
+│ │ ├─┬ nodemailer-direct-transport@1.0.2
+│ │ │ └── smtp-connection@1.3.1
+│ │ └─┬ nodemailer-smtp-transport@1.0.3
+│ │   ├── clone@1.0.2
+│ │   └── nodemailer-wellknown@0.1.7
+│ ├── nodemailer-stub-transport@0.1.5
+│ ├── sl-blip@1.0.0
+│ ├── stable@0.1.5
+│ ├─┬ strong-remoting@2.21.0
+│ │ ├── eventemitter2@0.4.14
+│ │ ├─┬ jayson@1.2.1
+│ │ │ ├─┬ commander@1.3.2
+│ │ │ │ └── keypress@0.1.0
+│ │ │ ├── eyes@0.1.8
+│ │ │ └─┬ jsonstream@1.0.3
+│ │ │   └── jsonparse@1.0.0
+│ │ ├── js2xmlparser@0.1.9
+│ │ ├─┬ mux-demux@3.7.9
+│ │ │ ├── duplex@1.0.0
+│ │ │ ├── json-buffer@2.0.11
+│ │ │ ├─┬ msgpack-stream@0.0.12
+│ │ │ │ ├─┬ bops@0.0.6
+│ │ │ │ │ ├── base64-js@0.0.2
+│ │ │ │ │ └── to-utf8@0.0.1
+│ │ │ │ ├── msgpack-js@0.3.0
+│ │ │ │ └── through@2.3.4
+│ │ │ ├─┬ stream-combiner@0.0.2
+│ │ │ │ └── duplexer@0.0.4
+│ │ │ ├── stream-serializer@1.1.2
+│ │ │ ├── through@2.3.8
+│ │ │ └── xtend@1.0.3
+│ │ ├── qs@2.4.2
+│ │ ├─┬ request@2.62.0
+│ │ │ ├── aws-sign2@0.5.0
+│ │ │ ├─┬ bl@1.0.0
+│ │ │ │ └─┬ readable-stream@2.0.2
+│ │ │ │   ├── process-nextick-args@1.0.3
+│ │ │ │   └── util-deprecate@1.0.1
+│ │ │ ├── caseless@0.11.0
+│ │ │ ├─┬ combined-stream@1.0.5
+│ │ │ │ └── delayed-stream@1.0.0
+│ │ │ ├── extend@3.0.0
+│ │ │ ├── forever-agent@0.6.1
+│ │ │ ├─┬ form-data@1.0.0-rc3
+│ │ │ │ └── async@1.4.2
+│ │ │ ├─┬ har-validator@1.8.0
+│ │ │ │ ├── bluebird@2.10.0
+│ │ │ │ ├─┬ chalk@1.1.1
+│ │ │ │ │ ├── ansi-styles@2.1.0
+│ │ │ │ │ ├── escape-string-regexp@1.0.3
+│ │ │ │ │ ├─┬ has-ansi@2.0.0
+│ │ │ │ │ │ └── ansi-regex@2.0.0
+│ │ │ │ │ ├── strip-ansi@3.0.0
+│ │ │ │ │ └── supports-color@2.0.0
+│ │ │ │ ├─┬ commander@2.8.1
+│ │ │ │ │ └── graceful-readlink@1.0.1
+│ │ │ │ └─┬ is-my-json-valid@2.12.2
+│ │ │ │   ├── generate-function@2.0.0
+│ │ │ │   ├─┬ generate-object-property@1.2.0
+│ │ │ │   │ └── is-property@1.0.2
+│ │ │ │   ├── jsonpointer@2.0.0
+│ │ │ │   └── xtend@4.0.0
+│ │ │ ├─┬ hawk@3.1.0
+│ │ │ │ ├── boom@2.8.0
+│ │ │ │ ├── cryptiles@2.0.5
+│ │ │ │ ├── hoek@2.16.2
+│ │ │ │ └── sntp@1.0.9
+│ │ │ ├─┬ http-signature@0.11.0
+│ │ │ │ ├── asn1@0.1.11
+│ │ │ │ ├── assert-plus@0.1.5
+│ │ │ │ └── ctype@0.5.3
+│ │ │ ├── isstream@0.1.2
+│ │ │ ├── json-stringify-safe@5.0.1
+│ │ │ ├── oauth-sign@0.8.0
+│ │ │ ├── stringstream@0.0.4
+│ │ │ ├── tough-cookie@2.0.0
+│ │ │ └── tunnel-agent@0.4.1
+│ │ ├─┬ sse@0.0.6
+│ │ │ └── options@0.0.6
+│ │ └─┬ xml2js@0.4.12
+│ │   ├── sax@1.1.3
+│ │   └── xmlbuilder@3.1.0
+│ ├── uid2@0.0.3
+│ └── underscore.string@3.2.2
+├─┬ loopback-boot@2.12.2
+│ ├── commondir@0.0.1
+│ ├── lodash@3.6.0
+│ ├── semver@4.3.6
+│ └── toposort@0.2.12
+├─┬ loopback-datasource-juggler@2.40.1
+│ ├── async@1.0.0
+│ ├─┬ loopback-connector@2.3.0
+│ │ └── async@1.4.2
+│ ├── node-uuid@1.4.3
+│ ├── qs@3.1.0
+│ └── traverse@0.6.6
+├─┬ loopback-explorer@1.8.0
+│ ├─┬ debug@1.0.4
+│ │ └── ms@0.6.2
+│ ├─┬ express@3.21.2
+│ │ ├── basic-auth@1.0.3
+│ │ ├── commander@2.6.0
+│ │ ├─┬ connect@2.30.2
+│ │ │ ├── basic-auth-connect@1.0.0
+│ │ │ ├── body-parser@1.13.3
+│ │ │ ├── connect-timeout@1.6.2
+│ │ │ ├── cookie-parser@1.3.5
+│ │ │ ├─┬ csurf@1.8.3
+│ │ │ │ └─┬ csrf@3.0.0
+│ │ │ │   ├── base64-url@1.2.1
+│ │ │ │   ├── rndm@1.1.0
+│ │ │ │   └── scmp@1.0.0
+│ │ │ ├── depd@1.0.1
+│ │ │ ├─┬ express-session@1.11.3
+│ │ │ │ ├── crc@3.3.0
+│ │ │ │ ├── depd@1.0.1
+│ │ │ │ └── uid-safe@2.0.0
+│ │ │ ├── method-override@2.3.5
+│ │ │ ├─┬ morgan@1.6.1
+│ │ │ │ └── depd@1.0.1
+│ │ │ ├─┬ multiparty@3.3.2
+│ │ │ │ ├── readable-stream@1.1.13
+│ │ │ │ └─┬ stream-counter@0.2.0
+│ │ │ │   └── readable-stream@1.1.13
+│ │ │ ├── pause@0.1.0
+│ │ │ ├── qs@4.0.0
+│ │ │ ├─┬ response-time@2.3.1
+│ │ │ │ └── depd@1.0.1
+│ │ │ ├─┬ serve-index@1.7.2
+│ │ │ │ └── batch@0.5.2
+│ │ │ └── vhost@3.0.1
+│ │ ├─┬ debug@2.2.0
+│ │ │ └── ms@0.7.1
+│ │ ├── depd@1.0.1
+│ │ └─┬ mkdirp@0.5.1
+│ │   └── minimist@0.0.8
+│ ├── lodash@2.4.2
+│ └─┬ swagger-ui@2.0.24
+│   ├── coffee-script@1.6.3
+│   ├─┬ handlebars@1.0.12
+│   │ ├─┬ optimist@0.3.7
+│   │ │ └── wordwrap@0.0.3
+│   │ └─┬ uglify-js@2.3.6
+│   │   ├── async@0.2.10
+│   │   └─┬ source-map@0.1.43
+│   │     └── amdefine@1.0.0
+│   ├─┬ less@1.4.2
+│   │ ├── mime@1.2.11
+│   │ ├── mkdirp@0.3.5
+│   │ └── ycssmin@1.0.1
+│   └─┬ swagger-client@2.0.36
+│     ├── btoa@1.1.1
+│     └─┬ shred@0.8.10
+│       ├── ax@0.1.8
+│       ├── cookiejar@1.3.1
+│       └── sprintf@0.1.1
+└─┬ serve-favicon@2.3.0
+  ├── etag@1.7.0
+  ├── fresh@0.3.0
+  ├── ms@0.7.1
+  └── parseurl@1.3.0
+
+npm WARN EPACKAGEJSON demo-sl-rdb@1.0.0 No license field.
+
+Next steps:
+
+  Change directory to your app
+    $ cd demo-sl-rdb
+
+  Create a model in your app
+    $ slc loopback:model
+
+  Optional: Enable StrongOps monitoring
+    $ slc strongops
+
+  Run the app
+    $ slc run .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to use RethinkDB as your backend, you need to install a RethinkDB connector by updating your &lt;code&gt;package.json&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;loopback-connector-rethinkdb&quot;: &quot;git://github.com/fuwaneko/loopback-connector-rethinkdb&quot;,
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Run &lt;code&gt;npm install&lt;/code&gt; then register RethinkDB as a new project Data Source as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slc loopback:datasource
+? Enter the data-source name: rethinkdb
+? Select the connector for rethinkdb: other
+? Enter the connector name without the loopback-connector- prefix: rethinkdb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now create a model that can be persisted into RethinkDB&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ slc loopback:model
+? Enter the model name: tasks
+? Select the data-source to attach tasks to: rethinkdb (rethinkdb)
+? Select model&#39;s base class: PersistedModel
+? Expose tasks via the REST API? Yes
+? Custom plural form (used to build REST URL): tasks
+Let&#39;s add some tasks properties now.
+
+Enter an empty property name when done.
+? Property name: title
+   invoke   loopback:property
+? Property type: string
+? Required? No
+
+Let&#39;s add another tasks property.
+Enter an empty property name when done.
+? Property name: description
+   invoke   loopback:property
+? Property type: string
+? Required? No
+
+Let&#39;s add another tasks property.
+Enter an empty property name when done.
+? Property name:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can find your model - data source config in &lt;code&gt;APP/server/model-config.json&lt;/code&gt; and model properties within &lt;code&gt;APP/common/models&lt;/code&gt;. One trick I found if you would like to specify custom Id property (e.g. “TaskId”) that works with RethinkDB, in your &lt;code&gt;APP/common/models/tasks.json&lt;/code&gt; you could specify Id properties as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;taskId&quot;: {
+ &quot;type&quot;: &quot;string&quot;,
+ &quot;id&quot;: true 
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once you’ve created necessary models, update your &lt;code&gt;APP/server/config.json&lt;/code&gt; with RethinkDB host URL, port, database name, and table names:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...,
+  &quot;rethinkdb&quot;: {
+    &quot;host&quot;: &quot;192.168.50.4&quot;,
+    &quot;port&quot;: 28015,
+    &quot;authKey&quot;: &quot;&quot;,
+    &quot;db&quot;: &quot;demo&quot;,
+    &quot;tables&quot;: {
+      &quot;Task&quot;: &quot;id&quot;
+    }
+  },
+&quot;legacyExplorer&quot;: false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You also need to insert RethinkDB URL into &lt;code&gt;APP/server/datasources.json&lt;/code&gt; to act as connection string&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &quot;rethinkdb&quot;: {
+    &quot;url&quot;: &quot;http://192.168.50.4:28015/demo&quot;,
+    &quot;name&quot;: &quot;rethinkdb&quot;,
+    &quot;connector&quot;: &quot;rethinkdb&quot;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s basically what you need to setup your StrongLoop app to work with RethinkDB. But before you run the app, make sure that you setup necessary database and table in your RethinkDB. Browse to your RethinkDB Data Explorer at &lt;code&gt;http://192.168.50.4:8080&lt;/code&gt; then run following command &lt;code&gt;r.dbCreate(&quot;demo&quot;)&lt;/code&gt; to create database and &lt;code&gt;r.db(&quot;demo&quot;).tableCreate(&#39;tasks&#39;, {primaryKey: &#39;taskId&#39;})&lt;/code&gt; to create table based on your model name.&lt;/p&gt;
+
+&lt;p&gt;Now you can run your StrongLoop app using &lt;code&gt;slc run .&lt;/code&gt; command and browse to &lt;code&gt;localhost:3000&lt;/code&gt;. Try to post using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &quot;title&quot;: &quot;demo task 1&quot;,
+  &quot;description&quot;: &quot;demo description&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you’ll get&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &quot;taskId&quot;: &quot;8ec003f2-8b38-4ec1-9f3f-486116ee44c8&quot;,
+  &quot;title&quot;: &quot;demo task 1&quot;,
+  &quot;description&quot;: &quot;demo description&quot;,
+  &quot;_rev&quot;: {
+    &quot;isNewInstance&quot;: true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Happy Exploring!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/rethinkdb-and-strongloop/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/rethinkdb-and-strongloop/</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Replacing Dreamweaver Template with Jekyll</title>
+        <description>&lt;p&gt;One of Dreamweaver’s &lt;a href=&quot;http://www.onlamp.com/pub/a/web-development/excerpts/0636920001393/templates-ch19.html&quot;&gt;indispensable timesaving feature&lt;/a&gt; is “Templates” to help you quickly build similar-looking pages and update every page in your site with the click of a button. Despite powerful text editor feature like Sublime Text, it is still not as practical as Dreamweaver Site Template feature to manage multiple pages. Now, I can achieve similar functionality using &lt;a href=&quot;http://jekyllrb.com/docs/pages/&quot;&gt;Jekyll static page&lt;/a&gt; and take advantage of much more powerful &lt;a href=&quot;https://docs.shopify.com/themes/liquid-documentation/basics&quot;&gt;Shopify Liquid&lt;/a&gt;, an open-source Ruby-based template language, to load dynamic content.&lt;/p&gt;
+
+&lt;p&gt;To  start, update jekyll &lt;code&gt;_config.yml&lt;/code&gt; with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;include:
+  - &quot;_pages&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create your global main page template, called &lt;em&gt;main.html&lt;/em&gt; at &lt;code&gt;_layouts&lt;/code&gt; and include `` tag to indicate editable region:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/html; charset=UTF-8&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-UA-Compatible&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;IE=edge,chrome=1&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Replacing Dreamweaver Template with Jekyll &lt;span class=&quot;ni&quot;&gt;&amp;amp;#8211;&lt;/span&gt;  &lt;span class=&quot;ni&quot;&gt;&amp;amp;#8211;&lt;/span&gt; Coding and Stuffs&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;codeadoodle&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;keywords&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;tutorials&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;canonical&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;HandheldFriendly&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;True&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;MobileOptimized&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;320&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Optional theme --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Customisation  --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/assets/css/site.css&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;21&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:locale&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;en_US&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;22&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;23&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Replacing Dreamweaver Template with Jekyll&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;24&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Coding and Stuffs&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;25&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;26&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:site_name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Code&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;27&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;29&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- jQuery (necessary for Bootstrap&amp;#39;s JavaScript plugins) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;30&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;31&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Latest compiled and minified JavaScript --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;32&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;33&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;34&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To accommodate common UI components across some of the pages, you can create sub-template called &lt;em&gt;bootstrap.html&lt;/em&gt; with &lt;code&gt;layout&lt;/code&gt; key value referring to parent template’s file name (e.g. &lt;em&gt;main&lt;/em&gt;).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; ---
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; layout: main
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; ---
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;container&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;row&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;       &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;page-header clearfix&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;         &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;pull-left&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Replacing Dreamweaver Template with Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.row--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;row&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;       &lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;         &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;footer&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;           &lt;span class=&quot;nt&quot;&gt;&amp;lt;hr/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;small&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;             &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text-muted&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span class=&quot;ni&quot;&gt;&amp;amp;copy;&lt;/span&gt;  &lt;span class=&quot;ni&quot;&gt;&amp;amp;bull;&lt;/span&gt; All rights reserved.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;             &lt;span class=&quot;nt&quot;&gt;&amp;lt;/small&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;       &lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.row --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /#container --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can also include another &lt;em&gt;html&lt;/em&gt; files as part of the template if they are placed in jekyll’s &lt;code&gt;includes&lt;/code&gt; folder, e.g.  &lt;em&gt;navbar.html&lt;/em&gt;. This is useful to make your template code more readable and manageable using following &lt;code&gt;{\% include navbar.html \%}&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navbar navbar-default navbar-fixed-top&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navigation&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navbar-header&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navbar-brand&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navbar-toggle&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-toggle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;collapse&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.sidebar-collapse&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sr-only&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Toggle navigation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fa fa-bars&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;nav-toggle&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navbar-toggle&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-toggle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;collapse&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#main-nav&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sr-only&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Toggle navigation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fa fa-ellipsis-h&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.navbar-header --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main-nav&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;collapse navbar-collapse&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;nav navbar-nav&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;       &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Page 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;       &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Page 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.dropdown --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!--/#main-nav .navbar-collapse--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.navbar-fixed-top --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Create your actual page called &lt;em&gt;hello.html&lt;/em&gt; in jekyll’s &lt;code&gt;_pages&lt;/code&gt; folder which refer to specific page template to apply.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; ---
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; layout: bootstrap
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; title: &amp;quot;Hello World&amp;quot;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; permalink: /hello-world/
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt; ---
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;panel panel-default&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;panel-heading&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Panel Title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;panel-body&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; Some content &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The page is available @ &lt;em&gt;http://localhost:4000/hello-world/&lt;/em&gt; after Jekyll build. Note that you can set relevant page and site level parameters for the templates to render, thus making your template more flexible and reusable.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/replacing-dreamweaver-template-with-jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>Installing Jekyll on Windows</title>
+        <description>&lt;p&gt;Julian Thilo has written comprehensive guide to get &lt;a href=&quot;http://jekyll-windows.juthilo.com/&quot;&gt;Jekyll running on Windows&lt;/a&gt;. This article highlights some of the errors that you might encounter and how to resolve them.&lt;/p&gt;
+
+&lt;p&gt;First, check your Ruby installation using &lt;code&gt;ruby -v&lt;/code&gt;. The recommended working version is &lt;a href=&quot;http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.0.0-p576-x64.exe&quot;&gt;&lt;em&gt;2.0.0p576&lt;/em&gt;&lt;/a&gt; (not the latest). It also works for &lt;em&gt;ruby 2.0.0p645 (2015-04-13) [x64-mingw32]&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will also need to install the &lt;a href=&quot;http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe&quot;&gt;Ruby Development Kit&lt;/a&gt;, which is also available on the Ruby Installer downloads page. Without DevKit, you’ll likely encounter following error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR:  Error installing jekyll:
+The &#39;yajl-ruby&#39; native gem requires installed build tools.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Double-click the self-extracting executable (SFX) downloaded and choose a directory (without spaces) to install the DevKit artifacts into&lt;br /&gt;
+e.g. &lt;code&gt;C:\RubyDevKit&lt;/code&gt;. Then, enable Rubies to use DevKit by running following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd C:\RubyDevKit
+ruby dk.rb init
+ruby dk.rb install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you encounter&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Invalid configuration or no Rubies listed. Please fix &#39;config.yml&#39; and rerun &#39;ruby dk.rb install&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;when running &lt;code&gt;ruby dk.rb install&lt;/code&gt; - check the &lt;code&gt;config.yml&lt;/code&gt; and add path to your ruby installation manually, i.e. &lt;code&gt;- C:/ruby200&lt;/code&gt; (include the dash), then re-run the command as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;c:\RubyDevKit&amp;gt;ruby dk.rb install
+[INFO] Installing &#39;C:/ruby200/lib/ruby/site_ruby/2.0.0/rubygems/defaults/operating_system.rb&#39;
+[INFO] Installing &#39;C:/ruby200/lib/ruby/site_ruby/devkit.rb&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Refer to  &lt;a href=&quot;http://github.com/oneclick/rubyinstaller/wiki/Development-Kit&quot;&gt;http://github.com/oneclick/rubyinstaller/wiki/Development-Kit&lt;/a&gt; for more details .&lt;/p&gt;
+
+&lt;p&gt;Finally, install Jekyll by running &lt;code&gt;gem install jekyll&lt;/code&gt;. In the event you encounter following SSL error when trying to pull updates from RubyGems:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR:  Could not find a valid gem &#39;jekyll&#39; (&amp;gt;= 0), here is why:
+Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://rubygems.org/latest_specs.4.8.gz)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You could use workaround highlighted in &lt;a href=&quot;https://gist.github.com/luislavena/f064211759ee0f806c88&quot;&gt;https://gist.github.com/luislavena/f064211759ee0f806c88&lt;/a&gt; to update your ruby gems (e.g. into version 2.0.15 for 2.0 branch):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;D:\&amp;gt;gem install --local D:\rubygems-update-2.0.15.gem
+update_rubygems --no-ri --no-rdoc
+gem uninstall rubygems-update -x
+gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s all! You should be able to clone your Jekyll theme and run &lt;code&gt;jekyll serve&lt;/code&gt; to build and run your site locally.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/installing-jekyll-on-windows/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/installing-jekyll-on-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Managing GitHub Pages using Prose.io</title>
+        <description>&lt;p&gt;GitHub provides &lt;a href=&quot;https://pages.github.com/&quot;&gt;freely hosted public web pages&lt;/a&gt; for users, organizations, and repositories. It is powered by Jekyll, a Ruby-based website generator that convert content written in Markdown into a complete static website. However, managing and updating content using Jekyll could be frustrating and inconvenient as you need to deal with command line interface to build and publish content into GitHub.&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&quot;http://prose.io/&quot;&gt;Prose.io&lt;/a&gt; which provides a simple online content authoring environment and management directly for GitHub. Assuming you have &lt;a href=&quot;http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/&quot;&gt;setup&lt;/a&gt; or forked your Jekyll templates all you need to do is&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Authorize Prose.io&lt;/li&gt;
+  &lt;li&gt;Add Prose configuration into your site &lt;code&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prose.io is open source and built with Backbone.js and therefore you can run it on your own server. It is not limited for blogging as you get access to all your repositories and practically edit any file you want.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/managing-github-pages-using-prose-io/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/managing-github-pages-using-prose-io/</guid>
+      </item>
+    
+      <item>
+        <title>Running RethinkDB on Windows</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://rethinkdb.com/&quot;&gt;RethinkDB&lt;/a&gt; is an open-source NoSQL JSON database with an innovative push architecture that can be used to continuously send updated query results to applications in realtime instead of polling for changes. It supports relationships using joins, geospatial query,  as well as analytics using aggregation and map/reduce. In short, it could dramatically reduces the time and effort necessary to build scalable realtime apps.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-rethinkdb&quot;&gt;Install RethinkDB&lt;/h3&gt;
+&lt;p&gt;Since RethinkDB requires Linux or OS X, you’ll need to &lt;a href=&quot;/posts/getting-started-with-ubuntu-using-vagrant-vvv-on-windows&quot;&gt;setup and start Ubuntu VM&lt;/a&gt; using VirtualBox before following RethinkDB &lt;a href=&quot;http://www.rethinkdb.com/docs/install/ubuntu/&quot;&gt;Installation Script&lt;/a&gt; on Windows. Use WinSCP, SSH into the VM then run following commands:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;- &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /etc/lsb-release &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/rethinkdb.list
+- wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sudo apt-key add -
+- sudo apt-get update
+- sudo apt-get install rethinkdb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;start-rethinkdb-at-system-startup&quot;&gt;Start RethinkDB at system startup&lt;/h3&gt;
+&lt;p&gt;You’ll need to add a config file to &lt;code&gt;/etc/rethinkdb/instances.d/&lt;/code&gt; to automatically run RethinkDB on system startup.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;- sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
+- sudo vim /etc/rethinkdb/instances.d/instance1.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Update RethinkDB binding with &lt;code&gt;bind=all&lt;/code&gt; and optionally, give a server name, then restart the service using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;- sudo /etc/init.d/rethinkdb restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;vim-editing-tips&quot;&gt;Vim Editing Tips&lt;/h3&gt;
+&lt;p&gt;If you’re using Vagrant VVV, you may need to use vim to edit since you may not have root access. Some quick reference on &lt;a href=&quot;http://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/&quot;&gt;vim editing&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;- Press &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;i&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; to enter insert mode
+- Press &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;esc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; to enter &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;mode
+- Type &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;:wq&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; to save and quit vim editing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 07 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/running-rethinkdb-on-windows/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/running-rethinkdb-on-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Getting started with Ubuntu using Vagrant on Windows</title>
+        <description>&lt;p&gt;Vagrant is a tool for building lightweight, reproducible, and portable development environment using configuration and provisioning script such as  &lt;a href=&quot;https://github.com/Varying-Vagrant-Vagrants/VVV&quot;&gt;Varying Vagrant Vagrants&lt;/a&gt;. Although it is focused PHP and WordPress development, VVV also automatically provision major packages such as nginx, nodejs, and git.&lt;/p&gt;
+
+&lt;p&gt;There’re few things to take note if you’re keen to use VVV on Windows 8.1:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;VVV requires VirtualBox, thus you need to turn Hyper-V support off. Instead doing this manually, you can create new boot menu with a “No Hyper-V” entry using following tips by &lt;a href=&quot;https://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&quot;&gt;Scott Hanselman&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;- C:\&amp;gt;bcdedit /copy {current} /d &amp;quot;No Hyper-V&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;- C:\&amp;gt;bcdedit /set {ff-23-113-824e-5c5144ea} hypervisorlaunchtype off &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hold down shift on the keyboard while clicking Windows &lt;code&gt;Restart&lt;/code&gt; button&lt;/li&gt;
+  &lt;li&gt;Follow VVV step-by-step installation guide&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update Windows host file with&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; 192.168.50.4 vvv.dev local.wordpress.dev local.wordpress-trunk.dev src.wordpress-develop.dev build.wordpress-develop.dev
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you want to be able to use other devices (e.g. mobile phone) to access the virtual machine, you need to configure Vagrant with &lt;code&gt;config.vm.network :public_network&lt;/code&gt;. Refer to webdevstudios’s post on &lt;a href=&quot;http://webdevstudios.com/2015/08/04/how-to-view-a-locally-developed-website-devices/&quot;&gt;How to View a Locally Developed Website on Other Devices&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;You can now use the Vagrant environment with &lt;code&gt;vagrant up&lt;/code&gt; and &lt;code&gt;vagrant halt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Visit http://vvv.dev/ for accessing VVV default dashboard&lt;/li&gt;
+  &lt;li&gt;You may also need to use &lt;a href=&quot;http://xip.io/&quot;&gt;xip.io&lt;/a&gt; to access virtual hosts from devices on your local network, like iPads, iPhones.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;related-resources&quot;&gt;Related Resources:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/vagrantfile-explained-setting-provisioning-shell/&quot;&gt;Vagrant shell provisioning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Articles &lt;a href=&quot;http://webdevstudios.com/2015/01/14/getting-started-vagrant-vvv-local-development/&quot;&gt;1&lt;/a&gt;,&lt;a href=&quot;https://zach-adams.com/2014/09/ultimate-wordpress-development-workflow/&quot;&gt;2&lt;/a&gt;,&lt;a href=&quot;https://wpbeaches.com/setting-up-a-wordpress-vvv-vagrant-workflow/&quot;&gt;3&lt;/a&gt; on using VVV Vagrant for WordPress local development workflow with &lt;a href=&quot;https://github.com/bradp/vv&quot;&gt;VV&lt;/a&gt; Variable and &lt;a href=&quot;https://github.com/topdown/VVV-Dashboard&quot;&gt;VVV Dashboard&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/138162/wildcards-in-a-windows-hosts-file&quot;&gt;StackOverflow&lt;/a&gt; on Setting up DNS and &lt;a href=&quot;http://www.lavinski.me/wildcard-hostnames/&quot;&gt;Wildcard Hostname&lt;/a&gt; on Windows&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 06 Aug 2015 00:00:00 +0800</pubDate>
+        <link>http://codeadoodle.github.io/2015/getting-started-with-ubuntu-using-vagrant-vvv-on-windows/</link>
+        <guid isPermaLink="true">http://codeadoodle.github.io/2015/getting-started-with-ubuntu-using-vagrant-vvv-on-windows/</guid>
+      </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Getting started with Ubuntu using Vagrant on Windows &#8211; Code: Coding and Stuffs</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="codeadoodle">
+    <meta name="keywords" content="tutorials">
+    <link rel="canonical" href="http://codeadoodle.github.io/2015/getting-started-with-ubuntu-using-vagrant-vvv-on-windows/">
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Getting started with Ubuntu using Vagrant on Windows">
+    <meta property="og:description" content="Coding and Stuffs">
+    <meta property="og:url" content="http://codeadoodle.github.io/2015/getting-started-with-ubuntu-using-vagrant-vvv-on-windows/">
+    <meta property="og:site_name" content="Code">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+</head>
+
+<body class="home-template">
+  <main class="u-container">
+    <div class="c-page">
+    <header class="c-page__header">
+    
+    <h1>Coding and Stuffs</h1>
+    <p>
+        <a href="/">Articles</a><span class="u-separate"></span> <a href="/about/">About</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    
+
+<article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Getting started with Ubuntu using Vagrant on Windows</h1>
+        <p class="c-article__time">
+            <time datetime="2015-08-06T00:00:00+08:00" itemprop="datePublished">Aug 6, 2015</time>
+        </p>
+        <span class="small">1 minute read</span> 
+    </header>
+    <div class="c-article__main">
+        <p>Vagrant is a tool for building lightweight, reproducible, and portable development environment using configuration and provisioning script such as  <a href="https://github.com/Varying-Vagrant-Vagrants/VVV">Varying Vagrant Vagrants</a>. Although it is focused PHP and WordPress development, VVV also automatically provision major packages such as nginx, nodejs, and git.</p>
+
+<p>There’re few things to take note if you’re keen to use VVV on Windows 8.1:</p>
+
+<ol>
+  <li>VVV requires VirtualBox, thus you need to turn Hyper-V support off. Instead doing this manually, you can create new boot menu with a “No Hyper-V” entry using following tips by <a href="https://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx">Scott Hanselman</a></li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">- C:\&gt;bcdedit /copy {current} /d &quot;No Hyper-V&quot;</span>
+<span class="go">- C:\&gt;bcdedit /set {ff-23-113-824e-5c5144ea} hypervisorlaunchtype off </span></code></pre></figure>
+
+<ol>
+  <li>Hold down shift on the keyboard while clicking Windows <code>Restart</code> button</li>
+  <li>Follow VVV step-by-step installation guide</li>
+  <li>
+    <p>Update Windows host file with</p>
+
+    <pre><code> 192.168.50.4 vvv.dev local.wordpress.dev local.wordpress-trunk.dev src.wordpress-develop.dev build.wordpress-develop.dev
+</code></pre>
+  </li>
+  <li>If you want to be able to use other devices (e.g. mobile phone) to access the virtual machine, you need to configure Vagrant with <code>config.vm.network :public_network</code>. Refer to webdevstudios’s post on <a href="http://webdevstudios.com/2015/08/04/how-to-view-a-locally-developed-website-devices/">How to View a Locally Developed Website on Other Devices</a>.</li>
+  <li>You can now use the Vagrant environment with <code>vagrant up</code> and <code>vagrant halt</code></li>
+  <li>Visit http://vvv.dev/ for accessing VVV default dashboard</li>
+  <li>You may also need to use <a href="http://xip.io/">xip.io</a> to access virtual hosts from devices on your local network, like iPads, iPhones.</li>
+</ol>
+
+<hr />
+
+<h3 id="related-resources">Related Resources:</h3>
+
+<ul>
+  <li><a href="http://www.sitepoint.com/vagrantfile-explained-setting-provisioning-shell/">Vagrant shell provisioning</a></li>
+  <li>Articles <a href="http://webdevstudios.com/2015/01/14/getting-started-vagrant-vvv-local-development/">1</a>,<a href="https://zach-adams.com/2014/09/ultimate-wordpress-development-workflow/">2</a>,<a href="https://wpbeaches.com/setting-up-a-wordpress-vvv-vagrant-workflow/">3</a> on using VVV Vagrant for WordPress local development workflow with <a href="https://github.com/bradp/vv">VV</a> Variable and <a href="https://github.com/topdown/VVV-Dashboard">VVV Dashboard</a></li>
+  <li><a href="http://stackoverflow.com/questions/138162/wildcards-in-a-windows-hosts-file">StackOverflow</a> on Setting up DNS and <a href="http://www.lavinski.me/wildcard-hostnames/">Wildcard Hostname</a> on Windows</li>
+</ul>
+
+
+    </div> 
+    <footer class="c-article__footer">
+        <p>
+            
+        </p>
+         
+    </footer>
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <section class="copyright">
+        <p><small><a href="">Code</a> by codeadoodle &copy; 2016  &bull; All rights reserved<span class="u-separate"></span><a href="/rss.xml">RSS</a></small></p>
+    </section>
+</footer>
+
+</div>
+
+  </main>
+      <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-124394-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+
+</body>
+</html>
