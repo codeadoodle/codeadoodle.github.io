@@ -406,7 +406,7 @@ You also need to insert RethinkDB URL into `APP/server/datasources.json` to act 
   }
 ```
 
-That's basically what you need to setup your StrongLoop app to work with RethinkDB. But before you run the app, make sure that you setup necessary database and table in your RethinkDB. Browse to your RethinkDB Data Explorer at http://192.168.50.4:8080 then run following command ` r.dbCreate("demo")` to create database and `r.db("demo").tableCreate('tasks', {primaryKey: 'taskId'})` to create table based on your model name.
+That's basically what you need to setup your StrongLoop app to work with RethinkDB. But before you run the app, make sure that you setup necessary database and table in your RethinkDB. Browse to your RethinkDB Data Explorer at `http://192.168.50.4:8080` then run following command `r.dbCreate("demo")` to create database and `r.db("demo").tableCreate('tasks', {primaryKey: 'taskId'})` to create table based on your model name.
 
 Now you can run your StrongLoop app using `slc run .` command and browse to `localhost:3000`. Try to post using
 

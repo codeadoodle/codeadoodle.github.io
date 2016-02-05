@@ -18,7 +18,7 @@ include:
 
 Create your global main page template, called _main.html_ at `_layouts` and include `{{content}}` tag to indicate editable region:
 
-```html
+{% highlight html linenos %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,11 +53,11 @@ Create your global main page template, called _main.html_ at `_layouts` and incl
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
-```
+{% endhighlight %}
 
 To accommodate common UI components across some of the pages, you can create sub-template called _bootstrap.html_ with `layout` key value referring to parent template's file name (e.g. _main_). 
 
-```html
+{% highlight html linenos %}
 ---
 layout: main
 ---
@@ -78,12 +78,12 @@ layout: main
 </div>
 <!-- /#container -->
 
-```
+{% endhighlight %}
 
 You can also include another _html_ files as part of the template if they are placed in jekyll's `includes` folder, e.g.  _navbar.html_. This is useful to make your template code more readable and manageable using following `{\% include navbar.html \%}`: 
       
 
-```html
+{% highlight html linenos %}
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="navbar-header"> <a class="navbar-brand" href="{{site.baseurl}}">{{ site.name }}</a>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse"> <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i> </button>
@@ -100,11 +100,11 @@ You can also include another _html_ files as part of the template if they are pl
   <!--/#main-nav .navbar-collapse-->
 </nav>
 <!-- /.navbar-fixed-top -->
-```
+{% endhighlight %}
 
 Create your actual page called _hello.html_ in jekyll's `_pages` folder which refer to specific page template to apply.
 
-```html
+{% highlight html linenos %}
 ---
 layout: bootstrap
 title: "Hello World"
@@ -116,6 +116,6 @@ permalink: /hello-world/
     <div class="panel-body"> Some content </div>
   </div>
 </main>
-```
+{% endhighlight %}
 
 The page is available @ _http://localhost:4000/hello-world/_ after Jekyll build. Note that you can set relevant page and site level parameters for the templates to render, thus making your template more flexible and reusable.
