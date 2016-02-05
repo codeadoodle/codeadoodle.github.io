@@ -1,82 +1,79 @@
 ---
-# Let's add a comment to make this file sass-y.
-# Change this file for any custom CSS.
+# Main scss file
 ---
+@charset "utf-8";
 
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
-.post-excerpt p {
-	display:inline;
-}
-
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Helpers
 @import
-	"syntax",
-  "basscss"
-;
+    'helpers/mixins',
+    'helpers/variables';
 
-pre{
-  margin:0 0 1.75em 0
+// Base
+@import
+    'base/reset';
+
+// Utilities
+@import
+    'utilities/layout',
+    'utilities/separator';
+
+// Components
+@import
+    'components/page',
+    'components/article',
+    'components/tag',
+    'components/archives';
+
+// Vendor
+@import
+    'vendor/highlight';
+
+body {
+   font-family: "Merriweather", serif;
+    background-image: url('/assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    padding-bottom: 16rem;
+    .c-article {
+    margin-bottom: 5rem;
+    }
+    .c-page__footer {
+    margin-bottom: 5rem;
+  }
 }
-figcaption {
-    font-size: 0.6em;
+
+textarea{
+  font-family: Arial
+}
+
+
+.image-wrapper {
     text-align: center;
+
+    .image-caption {
+        font-size:0.75em;
+        line-height: 2.2em;
+    }
 }
-.pagination,
-.button {
-  font-size: 1.4rem;
-  text-align: center;
+.c-page__header {
+    margin-bottom: 5rem;
+    h1{
+      font-weight: 800
+    }
+}
+.c-article__header {
+  margin-bottom: 3rem; 
+  h1{
+    width: 100%;
+  }
+}
+.c-archives__list {
+    li {
+        margin-bottom: 0rem;
+    }
+    h1, h2, h3, h4, h5, h6, pre, blockquote, dl, figure, table, p, ul, ol, form {
+        margin-bottom: 0rem;
+   }
 }
 
-.pagination a, .pagination .disabled {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  background: #fafafa;
-  border-radius: 0.1875em;
-  border: 1px solid #f3f3f3;
-  color: #333333;
-  padding: 1em 1.5em;
-}
-
-.pagination .disabled {
-  opacity: 0.5;
-}
-
-.pagination a:hover, .pagination a:focus {
-  background: white;
-  color: #477dca;
-}
-
-.pagination a:active {
-  background: #f7f7f7;
-}
-.button {
-  font-family: inherit;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  -webkit-appearance: none;
-  appearance: none;
-  white-space: nowrap;
-  display: inline-block;
-  line-height: 2rem;
-  height: auto;
-  min-height: 2rem;
-  padding: .5rem 1rem;
-}
-
-.button-big {
-  padding: 1.5rem 2rem;
-}
-
-.button-small {
-  padding: 0 1rem;
-}
-form {  font-weight: 300; font-size: 1.6rem;  }
-
-textarea.input { height: 8em; }
-
-.page-title a{
-  color:#333;
-}

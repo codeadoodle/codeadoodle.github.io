@@ -1,10 +1,8 @@
 ---
 layout: main
-title: About me 
+title: Hello
 permalink: /about/
 cover: false
-about: '/about/'
-project: '/projects/'
 sitemap:
   lastmod: 2014-01-23
   priority: 0.7
@@ -12,7 +10,8 @@ sitemap:
   exclude: 'yes'
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+I'm working at the junction of aesthetics and purpose to craft delightful user experiences. My opinions belong to nobody but myself.
+
 <div class="py2">
   <form action="https://formspree.io/{{ site.email }}" method="POST" class="form-stacked form-light">
     <input type="text" name="email" class="input mobile-block" placeholder="Your Email Address">

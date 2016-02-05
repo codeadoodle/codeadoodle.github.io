@@ -2,4 +2,7 @@ _site
 .DS_Store
 *.swp
 .sass-cache
-
+.jekyll-metadata
+.tmp
+node_modules
+bower_components

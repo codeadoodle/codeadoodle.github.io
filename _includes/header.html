@@ -1,23 +1,8 @@
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title"><a href="{{ site.baseurl }}">
-                   {{ site.name }}
-                </a></h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-              <!--   {% if site.project%} <a href='{{ site.project }}'> My Works</a> and {% endif %}
-                {% if site.about %} <a href='{{ site.about }}'> About me </a> {% endif %} -->
-            </h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+<header class="c-page__header">
+    {% if page.title == 'Home' %}
+    {% endif %}
+    <h1>{{ site.description }}</h1>
+    <p>
+        <a href="{{ "/" | prepend: site.baseurl }}">Articles</a><span class="u-separate"></span> <a href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+    </p>
 </header>

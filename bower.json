@@ -1,0 +1,24 @@
+{
+  "name": "CodeaDoodle",
+  "version": "0.0.0",
+  "homepage": "codeadoodle.github.io",
+  "authors": [
+    "codeadoodle <codeadoodle@gmail.com>"
+  ],
+  "description": "Codeadoodle Website",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "Blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
