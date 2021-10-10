@@ -1,0 +1,560 @@
+[
+  
+    {
+      "title"    : "PTL #9 - Economy",
+      "url"      : "/notes/2021/09/ptl-meetup9/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-09-09 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #8 - Culture",
+      "url"      : "/notes/2021/08/ptl-meetup8/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-08-26 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #7 - Ownership",
+      "url"      : "/notes/2021/08/ptl-meetup7/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-08-12 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #6 - Mentorship",
+      "url"      : "/notes/2021/08/ptl-meetup6/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-08-03 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #5 - Resilience",
+      "url"      : "/notes/2021/07/ptl-meetup5/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-07-20 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #4 - Sustainability",
+      "url"      : "/notes/2021/07/ptl-meetup4/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-07-10 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #3 - Trust",
+      "url"      : "/notes/2021/06/ptl-meetup3/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-06-18 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #2 - Decision Making",
+      "url"      : "/notes/2021/06/ptl-meetup2/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-06-03 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL #1 - Anatomy of a Meetup",
+      "url"      : "/notes/2021/05/ptl-meetup1/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-05-20 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "The Currency of Trust",
+      "url"      : "/notes/2021/05/the-currency-of-trust/",
+      "category" : "webinar",
+      "tags"     : "",
+      "date"     : "2021-05-12 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL Retreat #4",
+      "url"      : "/notes/2021/05/ptl-retreat4/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-05-02 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL Retreat #3",
+      "url"      : "/notes/2021/05/ptl-retreat3/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-05-01 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL Retreat #2",
+      "url"      : "/notes/2021/04/ptl-retreat2/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-04-18 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
+      "title"    : "PTL Retreat #1",
+      "url"      : "/notes/2021/04/ptl-retreat1/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-04-17 00:00:00 +0800",
+      "description" : "no description"
+
+    } 
+  ,
+  
+    {
+
+      "title"    : "Singapore Airshow 2010",
+      "url"      : "/projects/2010-2-singaporeairshow/",
+      "category" : "project",
+      "date"     : "2010-02-02 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Chinatown CoLAB 2014",
+      "url"      : "/projects/2014-1-chinatown-coLAB/",
+      "category" : "project",
+      "date"     : "2014-03-28 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Enabling Community coLAB 2014",
+      "url"      : "/projects/2014-2-enabling-community-coLAB/",
+      "category" : "project",
+      "date"     : "2014-04-05 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Startup Asia Singapore 2014",
+      "url"      : "/projects/2014-3-startup-asia-singapore/",
+      "category" : "project",
+      "date"     : "2014-05-07 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "GeoHackathon 2014",
+      "url"      : "/projects/2014-4-geohackathon/",
+      "category" : "project",
+      "date"     : "2014-06-06 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Smart Port Hackathon 2014",
+      "url"      : "/projects/2014-5-smart-port-hackathon/",
+      "category" : "project",
+      "date"     : "2014-07-18 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "SingTel Accelerator Challenge",
+      "url"      : "/projects/2014-6-singtel-accelerator-challenge/",
+      "category" : "project",
+      "date"     : "2014-08-25 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "NEA Clean &amp; Green Hackathon 2014",
+      "url"      : "/projects/2014-7-nea-clean-and-green-hackathon/",
+      "category" : "project",
+      "date"     : "2014-11-14 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Data Discovery Challenge",
+      "url"      : "/projects/2015-1-data-discovery-challenge/",
+      "category" : "project",
+      "date"     : "2015-01-26 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "DBS Talent Conference Hackathon",
+      "url"      : "/projects/2015-2-dbs-talent-conference-hackathon/",
+      "category" : "project",
+      "date"     : "2015-02-25 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Smart Nation API coLAB",
+      "url"      : "/projects/2015-3-smart-nation-api-coLAB/",
+      "category" : "project",
+      "date"     : "2015-03-15 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Smart Health coLAB",
+      "url"      : "/projects/2015-4-smart-health-coLAB/",
+      "category" : "project",
+      "date"     : "2015-05-11 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "NEA Clean &amp; Green Hackathon 2015",
+      "url"      : "/projects/2015-5-nea-clean-and-green-hackathon/",
+      "category" : "project",
+      "date"     : "2015-06-19 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Hackathon@SG 2015",
+      "url"      : "/projects/2015-6-hackathon-at-sg/",
+      "category" : "project",
+      "date"     : "2015-07-25 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Modern Aging 2015",
+      "url"      : "/projects/2015-7-modern-aging/",
+      "category" : "project",
+      "date"     : "2015-09-16 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Social Innovators Hack!",
+      "url"      : "/projects/2015-8-social-innovators-hack/",
+      "category" : "project",
+      "date"     : "2015-11-14 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "HDB Cool Ideas Hack",
+      "url"      : "/projects/2016-3-hdb-cool-ideas-hack/",
+      "category" : "project",
+      "date"     : "2016-06-24 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Sabre&#39;s Destination Hack : Singapore",
+      "url"      : "/projects/2016-4-sabre-destination-hack-singapore/",
+      "category" : "project",
+      "date"     : "2016-10-14 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "MIT Hacking Medicine Robotics",
+      "url"      : "/projects/2017-1-mit-hacking-medicine-robotics/",
+      "category" : "project",
+      "date"     : "2017-02-10 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "MOE Learning Buildathon",
+      "url"      : "/projects/2017-2-moe-buildathon/",
+      "category" : "project",
+      "date"     : "2017-03-25 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "War on Diabetes Designathon",
+      "url"      : "/projects/2017-3-war-on-diabetes-designathon/",
+      "category" : "project",
+      "date"     : "2017-06-30 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "SIA App Challenge",
+      "url"      : "/projects/2017-4-sia-app-challenge/",
+      "category" : "project",
+      "date"     : "2017-10-21 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Grow Asia Hackathon 2018",
+      "url"      : "/projects/2018-4-growasia-hackathon/",
+      "category" : "project",
+      "date"     : "2018-04-21 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "OneService Innovation Challenge 2018",
+      "url"      : "/projects/2018-8-oneservice-challenge/",
+      "category" : "project",
+      "date"     : "2018-08-31 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "STB Tourism Innovation Challenge for MICE 2018",
+      "url"      : "/projects/2018-11-stb-mice/",
+      "category" : "project",
+      "date"     : "2018-11-15 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "12th ATRANS Annual Conference",
+      "url"      : "/projects/2019-08-atrans/",
+      "category" : "project",
+      "date"     : "2019-08-23 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "ITS World Congress 2019",
+      "url"      : "/projects/2019-10-itswc-ally/",
+      "category" : "project",
+      "date"     : "2019-10-15 00:00:00 +0800",
+      "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "Our Graphic Memories of COVID-19",
+      "url"      : "/projects/2020-11-dsc-ourgraphicmemories/",
+      "category" : "project",
+      "date"     : "2020-11-30 00:00:00 +0800",
+      "description" : "no description"
+    } 
+  ,
+  
+  {
+
+    "title"    : "Human Centered Design with Acumen and IDEO",
+    "url"      : "/events/2016/04/16/workshop-hcdideo",
+    "category" : "events",
+    "date"     : "2016-04-16 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "DSC - vHM Masterclass in Strategic Design Management",
+    "url"      : "/events/2016/07/11/workshop-strategicdesign",
+    "category" : "events",
+    "date"     : "2016-07-11 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Nielsen Norman Group Singapore UX Conference",
+    "url"      : "/events/2017/01/20/workshop-nng",
+    "category" : "events",
+    "date"     : "2017-01-20 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Design Leadership with Robb Ziegler and Deb Mrazek",
+    "url"      : "/events/2017/03/10/workshop-designleadership",
+    "category" : "events",
+    "date"     : "2017-03-10 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Process Facilitation Workshop by Idialogue",
+    "url"      : "/events/2017/05/09/workshop-processfacilitation",
+    "category" : "events",
+    "date"     : "2017-05-09 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Improv 101 by The Improv Company",
+    "url"      : "/events/2017/06/05/workshop-improv101",
+    "category" : "events",
+    "date"     : "2017-06-05 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Facilitating Powerful Conversation by The Thought Collective",
+    "url"      : "/events/2017/08/12/workshop-powerfulconversation",
+    "category" : "events",
+    "date"     : "2017-08-12 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Using Improv to Save the World with Belina Raffy",
+    "url"      : "/events/2017/08/30/workshop-improvsavetheworld",
+    "category" : "events",
+    "date"     : "2017-08-30 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Field Research Masterclass by Studio D",
+    "url"      : "/events/2017/12/08/workshop-fieldresearch",
+    "category" : "events",
+    "date"     : "2017-12-08 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Personal Moral Compass by Caritas Singapore",
+    "url"      : "/events/2018/04/16/workshop-pmc",
+    "category" : "events",
+    "date"     : "2018-04-16 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Tableau Server Administration",
+    "url"      : "/events/2019/01/14/workshop-tsa",
+    "category" : "events",
+    "date"     : "2019-01-14 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Human-Centered Design Practitioner by Luma Institute",
+    "url"      : "/events/2019/04/16/workshop-luma",
+    "category" : "events",
+    "date"     : "2019-04-16 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "AWS Certified SysOps Administrator",
+    "url"      : "/events/2020/03/16/workshop-awssysops",
+    "category" : "events",
+    "date"     : "2020-03-16 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "AWS Certified Solution Architect",
+    "url"      : "/events/2020/07/20/workshop-awssa",
+    "category" : "events",
+    "date"     : "2020-07-20 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Nielsen Norman Group UX Conference",
+    "url"      : "/events/2020/07/26/workshop-nng",
+    "category" : "events",
+    "date"     : "2020-07-26 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Inquiry Driven Leadership",
+    "url"      : "/events/2020/11/25/workshop-inquirydrivenleadership",
+    "category" : "events",
+    "date"     : "2020-11-25 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Product Tonic Lab",
+    "url"      : "/events/2021/04/16/workshop-producttoniclab",
+    "category" : "events",
+    "date"     : "2021-04-16 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Strategyzer Testing Business Ideas",
+    "url"      : "/events/2021/05/18/workshop-testingbusinessideas",
+    "category" : "events",
+    "date"     : "2021-05-18 00:00:00 +0800",
+    "description" : "no description"
+  } 
+
+  
+]
