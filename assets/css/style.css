@@ -2202,7 +2202,7 @@ https://ricostacruz.com/til/#toc
 
 .project__item:hover { text-decoration: none; }
 
-.project__item:hover .project__title { text-decoration: underline; }
+.project__item:hover .project__title ~ a { text-decoration: underline; }
 
 .project__item .project__date { display: block; width: 140px; font-size: 1em; color: #828282; text-decoration: none; font-family: "Oswald", sans-serif; text-transform: uppercase; }
 
