@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "PTL #10 - Self",
+      "url"      : "/notes/2021/10/ptl-meetup10/",
+      "category" : "workshop",
+      "tags"     : "",
+      "date"     : "2021-10-07 00:00:00 +0800",
+      "description" : "no description"
+
+    } ,
+  
+    {
       "title"    : "PTL #9 - Economy",
       "url"      : "/notes/2021/09/ptl-meetup9/",
       "category" : "workshop",
