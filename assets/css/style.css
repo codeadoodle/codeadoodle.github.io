@@ -1882,7 +1882,7 @@ Content
 
 ul.archive-list, ul.category-list, ul.project-list, ul.note-list { margin-left: 0; padding: 0; list-style-type: none; }
 
-h2.project__title, h2.note__title { font-size: 2.5rem; line-height: 2.5rem; margin-top: 0; }
+h2.project__title, h2.note__title { font-size: 2rem; line-height: 2.5rem; margin-top: 0; }
 
 .project__year, .note__year { margin-bottom: 20px; text-transform: uppercase; font-weight: bold; border-top: 5px solid #424242; display: inline-block; width: 10%; min-width: 120px; }
 
@@ -1909,7 +1909,7 @@ Notes Paginator
 -------------------------------- */
 .page-number { margin-left: 10px; margin-right: 10px; }
 
-.paginator-list { margin-top: 2rem; }
+.paginator-list { padding-top: 2rem; }
 
 .paginator-current { display: inline; padding: 20px 30px; background-color: #e8e8e8; }
 
@@ -1971,6 +1971,14 @@ SEARCH
 @media screen and (max-width: 49.99em) { #results-container { margin: 2rem  1rem; } }
 
 @media screen and (min-width: 50em) { #results-container { margin: 2rem; } #results-container li { float: left; width: 100%; } #results-container .result-link { float: right; width: 80%; } }
+
+/* -------------------------------- 
+
+YOUTUBE EMBED VIDEO
+-------------------------------- */
+.video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* -------------------------------- 
 
@@ -2208,7 +2216,7 @@ https://ricostacruz.com/til/#toc
 
 .project__item .project__title { font-family: "Oswald", sans-serif; font-size: 2rem; line-height: 1.2em; }
 
-.project__item .project__excerpt { float: right; width: 80%; color: black; }
+.project__item .project__excerpt { float: right; width: 80%; color: black; padding-top: 0.5rem; }
 
 .project__item .project__viewall { float: right; text-transform: uppercase; font-size: 0.75em; padding: 5px 0px 0px 0px; border-top: 1px solid; text-align: right; min-width: 60%; }
 
