@@ -2218,7 +2218,7 @@ https://ricostacruz.com/til/#toc
 
 .project__item .project__excerpt { float: right; width: 80%; color: black; padding-top: 0.5rem; }
 
-.project__item .project__viewall { float: right; text-transform: uppercase; font-size: 0.75em; padding: 5px 0px 0px 0px; border-top: 1px solid; text-align: right; min-width: 60%; }
+.project__item .project__viewall { float: right; text-transform: uppercase; font-size: 0.75em; padding: 10px 0px 0px 0px; border-top: 1px solid; text-align: right; min-width: 80%; margin-top: 20px; }
 
 .project__container__next { margin-top: 2rem; }
 

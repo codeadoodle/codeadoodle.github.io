@@ -449,6 +449,15 @@
       "category" : "project",
       "date"     : "2022-01-05 00:00:00 +0800",
       "description" : "no description"
+    } ,
+  
+    {
+
+      "title"    : "The GEAR",
+      "url"      : "/projects/2023-08-Kajima-TheGear/",
+      "category" : "project",
+      "date"     : "2023-08-04 00:00:00 +0800",
+      "description" : "no description"
     } 
   ,
   
@@ -611,6 +620,96 @@
     "url"      : "/events/2021/05/18/workshop-testingbusinessideas",
     "category" : "events",
     "date"     : "2021-05-18 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Studio Dojo Design Facilitation #1",
+    "url"      : "/events/2022/01/25/workshop-design-facilitation-1",
+    "category" : "events",
+    "date"     : "2022-01-25 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Studio Dojo Design Facilitation #2",
+    "url"      : "/events/2022/02/22/workshop-design-facilitation-2",
+    "category" : "events",
+    "date"     : "2022-02-22 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Level C —  Branding Workshop : The Liquid Death Edition",
+    "url"      : "/events/2023/01/23/workshop-levelc-branding",
+    "category" : "events",
+    "date"     : "2023-01-23 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "SMU Academy — The Deal with Blockchain and dApps",
+    "url"      : "/events/2023/05/02/workshop-smu-dapps",
+    "category" : "events",
+    "date"     : "2023-05-02 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "SMU Academy — Future of FinTech, DeFi and Token Economics",
+    "url"      : "/events/2023/05/24/workshop-smu-fintech",
+    "category" : "events",
+    "date"     : "2023-05-24 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "SMU Academy — Understanding the Metaverse and Web 3.0",
+    "url"      : "/events/2023/05/29/workshop-smu-metaverse",
+    "category" : "events",
+    "date"     : "2023-05-29 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "SMU Academy — Understanding NFTs and DAO",
+    "url"      : "/events/2023/06/19/workshop-smu-nft",
+    "category" : "events",
+    "date"     : "2023-06-19 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "SMU Academy — Leveraging the Power of Web 3.0",
+    "url"      : "/events/2023/07/17/workshop-smu-web3",
+    "category" : "events",
+    "date"     : "2023-07-17 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "LKYSPP — Futures for Public Policy",
+    "url"      : "/events/2023/09/12/workshop-lkyspp",
+    "category" : "events",
+    "date"     : "2023-09-12 00:00:00 +0800",
+    "description" : "no description"
+  } ,
+
+  {
+
+    "title"    : "Chatting with Strangers : Mastering the art of in-depth interviews",
+    "url"      : "/events/2023/11/11/workshop-shopkeeperstories",
+    "category" : "events",
+    "date"     : "2023-11-11 00:00:00 +0800",
     "description" : "no description"
   } 
 
